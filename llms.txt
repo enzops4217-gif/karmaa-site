@@ -1,0 +1,17 @@
+# KarmaaOptimizer
+> Optimiseur PC gaming pour Windows 10/11 (application de bureau). Audit de santé noté A+ à F, 91 réglages 100 % réversibles, 3 profils en un clic (Standard, Lourd, Extrême), superposition HUD temps réel, 16 outils de test (souris, latence, réseau), guide BIOS, assistant IA KarmaaAI. Aucune injection dans les jeux : compatible anti-triche. Licence à vie pour 1 PC : 30 €. Obtention : rejoindre le Discord officiel et ouvrir un ticket.
+
+Windows 10/11 desktop app that optimizes gaming PCs: health audit scored A+ to F, 91 fully reversible tweaks, 3 one-click profiles (Standard, Heavy, Extreme), real-time HUD, 16 test tools (mouse, latency, network), BIOS guidance, KarmaaAI assistant. No injection into games (anti-cheat friendly). Lifetime license, 1 PC: 30 EUR.
+
+## Pages
+- [Site EN](https://karmaaoptimizer.com/): overview, FAQ, offer
+- [Site FR](https://karmaaoptimizer.com/fr/): présentation, FAQ, offre
+
+## Acheter / Buy
+- [Discord officiel (ticket)](https://discord.gg/6hES7Hn3u7)
+
+## Faits clés / Key facts
+- Prix / Price: 30 EUR, licence à vie / lifetime, 1 PC
+- Plateforme / Platform: Windows 10, Windows 11
+- Réversibilité / Reversibility: 91 réglages défaisables en un clic / 91 tweaks undone in one click
+- Support: 7j/7 via Discord / 7 days a week via Discord
