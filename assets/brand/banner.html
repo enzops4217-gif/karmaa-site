@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Bannière KarmaaOptimizer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Source de assets/tickets.jpg (1200x630). Exporter avec Chrome en mode headless. */
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px;overflow:hidden;background:#000}
+  .b{position:relative;width:1200px;height:630px;font-family:'Inter','Segoe UI',system-ui,sans-serif;color:#f5f5f7;
+     background:radial-gradient(520px 420px at 330px 315px,#2a2114 0%,rgba(42,33,20,0) 70%),
+                radial-gradient(900px 500px at 900px 330px,#121110 0%,#000 75%)}
+  .frame{position:absolute;inset:22px;border:1px solid rgba(212,180,131,.22);border-radius:26px}
+  .logo{position:absolute;left:198px;top:183px;width:264px;height:264px;filter:drop-shadow(0 26px 60px rgba(212,180,131,.22))}
+  .txt{position:absolute;left:530px;top:50%;transform:translateY(-50%)}
+  h1{font-size:74px;font-weight:600;letter-spacing:-2.6px;line-height:1}
+  h1 span{background:linear-gradient(180deg,#f3e2bf,#d4b483 55%,#a8885a);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .rule{width:84px;height:2px;margin:30px 0 26px;background:linear-gradient(90deg,#d4b483,rgba(212,180,131,0))}
+  p{font-size:22px;font-weight:500;letter-spacing:7px;text-transform:uppercase;color:#c9b18a}
+  .foot{position:absolute;left:62px;right:62px;bottom:50px;display:flex;justify-content:space-between;font-size:15px;letter-spacing:2.5px;text-transform:uppercase;color:#6e6e75}
+</style>
+</head>
+<body>
+<div class="b">
+  <div class="frame"></div>
+  <img class="logo" src="logo.svg" alt="">
+  <div class="txt">
+    <h1>Karmaa<span>Optimizer</span></h1>
+    <div class="rule"></div>
+    <p>Boutique &amp; support</p>
+  </div>
+  <div class="foot"><span>Serveur communautaire</span><span>Discord</span></div>
+</div>
+</body>
+</html>
