@@ -29,7 +29,7 @@ section{position:relative;padding:clamp(4.5rem,10vw,7.5rem) max(var(--pad),env(s
 /* --- Préloader --- */
 #pre{position:fixed;inset:0;z-index:1000;background:var(--black);color:#f5f5f7;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
 #pre img{width:56px;height:56px;object-fit:contain}
-#pre-n{font-size:.9rem;color:var(--mute-dark)}
+#pre-n{display:none}
 #pre i{position:absolute;left:50%;top:calc(50% + 4.5rem);transform:translateX(-50%);height:3px;width:0;max-width:140px;background:#f5f5f7;border-radius:3px}
 
 /* --- Barre de navigation givrée --- */
@@ -88,6 +88,13 @@ section{position:relative;padding:clamp(4.5rem,10vw,7.5rem) max(var(--pad),env(s
 .manif{max-width:52rem;margin-inline:auto;text-align:center;font-weight:600;font-size:clamp(1.6rem,3.4vw,2.8rem);line-height:1.15;letter-spacing:-.025em}
 .js .manif .w{opacity:.18}
 
+/* --- Comment ça marche --- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,4vw,3.5rem);max-width:1100px;margin-inline:auto}
+.steps li{display:flex;flex-direction:column;gap:.6rem}
+.step-n{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--ink);color:#fff;font-weight:600;margin-bottom:.4rem}
+.steps h3{font-size:1.6rem}
+.steps p{color:var(--mute)}
+
 /* --- Chiffres --- */
 #chiffres{display:grid;grid-template-columns:repeat(6,1fr);gap:0;padding-top:0;padding-bottom:clamp(4.5rem,10vw,7.5rem)}
 #chiffres .card{border:0;border-radius:0;background:none;padding:1rem;display:flex;flex-direction:column;gap:.3rem;align-items:center;text-align:center;border-left:1px solid var(--hair)}
@@ -137,6 +144,7 @@ section{position:relative;padding:clamp(4.5rem,10vw,7.5rem) max(var(--pad),env(s
 /* --- Confiance --- */
 .pil-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1200px;margin-inline:auto}
 .pil{padding:2.4rem 1.6rem;text-align:center;border:0}
+.t-white .pil{background:var(--parch)}
 .pil svg{width:44px;height:44px;margin:0 auto 1.1rem;display:block;fill:none;stroke:var(--blue);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .js .pil svg path,.js .pil svg circle{stroke-dasharray:200;stroke-dashoffset:200;transition:stroke-dashoffset 1.4s var(--ease)}
 .js .pil.on svg path,.js .pil.on svg circle{stroke-dashoffset:0}
@@ -165,7 +173,11 @@ section{position:relative;padding:clamp(4.5rem,10vw,7.5rem) max(var(--pad),env(s
 .price li::before{content:counter(s);display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--parch);color:var(--ink);font-size:.85rem;font-weight:600;transition:background .6s,color .6s}
 .price li.lit{color:var(--ink)}
 .price li.lit::before{background:var(--blue);color:#fff}
-.price .btn{width:100%;margin-top:.6rem}
+.price .btn{width:100%;margin-top:.4rem}
+.price .incl{list-style:none;width:100%;text-align:left;display:flex;flex-direction:column;gap:.55rem;border:0}
+.price .incl li{display:block;padding:0 0 0 1.7rem;border:0;color:var(--ink);position:relative}
+.price .incl li::before{content:"";position:absolute;left:.15rem;top:.35em;width:.45rem;height:.8rem;border:solid var(--blue);border-width:0 2px 2px 0;transform:rotate(45deg);background:none;border-radius:0}
+.buy-h{align-self:flex-start;margin-top:.8rem;font-weight:600}
 
 /* --- Footer parchemin --- */
 #footer{position:relative;background:var(--parch);border-top:1px solid var(--hair);color:var(--mute);font-size:.8rem;padding:clamp(3rem,6vw,4rem) max(var(--pad),env(safe-area-inset-right,0px)) calc(1.6rem + env(safe-area-inset-bottom,0px)) max(var(--pad),env(safe-area-inset-left,0px))}
@@ -200,6 +212,7 @@ section{position:relative;padding:clamp(4.5rem,10vw,7.5rem) max(var(--pad),env(s
 }
 @media (max-width:640px){
   .hide-sm{display:none}
+  .steps{grid-template-columns:1fr}
   .cta .btn{flex:1}
   #chiffres{grid-template-columns:1fr 1fr}
   #chiffres .card{border-left:0}
