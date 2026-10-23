@@ -27,7 +27,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="assets/logo.png?v=2">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.css">
-<link rel="stylesheet" href="styles.css?v=7">
+<link rel="stylesheet" href="styles.css?v=8">
 <noscript><style>#pre{display:none!important}</style></noscript>
 </head>
 <body>
@@ -71,6 +71,16 @@
   <ol class="steps"><li><span class="step-n">1</span><h3>Scan</h3><p>19 checks on your Windows setup. You get a grade from A+ to F and a clear list of what holds your PC back.</p></li><li><span class="step-n">2</span><h3>Apply</h3><p>Pick a profile or choose tweaks one by one. Each of the 91 tweaks tells you what it changes before you click.</p></li><li><span class="step-n">3</span><h3>Measure</h3><p>Run the test bench before and after. Keep what helps, undo what doesn't.</p></li></ol>
 </section>
 
+<section id="apercu" class="t-parch" aria-labelledby="h-gal">
+  <h2 class="big" id="h-gal">See the app before you buy.</h2>
+  <div class="gal">
+    <div class="gal-tabs" role="tablist" aria-label="App screens"><button class="gal-tab" type="button" role="tab" id="gt-1" aria-controls="gp-1" aria-selected="true">Overview</button><button class="gal-tab" type="button" role="tab" id="gt-2" aria-controls="gp-2" aria-selected="false" tabindex="-1">Profiles</button><button class="gal-tab" type="button" role="tab" id="gt-3" aria-controls="gp-3" aria-selected="false" tabindex="-1">HUD</button><button class="gal-tab" type="button" role="tab" id="gt-4" aria-controls="gp-4" aria-selected="false" tabindex="-1">Before / After</button><button class="gal-tab" type="button" role="tab" id="gt-5" aria-controls="gp-5" aria-selected="false" tabindex="-1">Latency</button><button class="gal-tab" type="button" role="tab" id="gt-6" aria-controls="gp-6" aria-selected="false" tabindex="-1">KarmaaAI</button></div>
+    <figure class="gal-panel" id="gp-1" role="tabpanel" aria-labelledby="gt-1"><div class="gal-frame"><img src="assets/img/app/en/01-overview.webp" width="1920" height="1200" alt="PC overview: live CPU and GPU gauges, motherboard, processor, graphics card, memory, storage and network" loading="lazy" decoding="async"></div><figcaption>Your hardware at a glance, with live CPU and GPU readings.</figcaption></figure><figure class="gal-panel" id="gp-2" role="tabpanel" aria-labelledby="gt-2" hidden><div class="gal-frame"><img src="assets/img/app/en/03-profiles.webp" width="1920" height="1200" alt="Tweaks page with the Standard, Heavy and Extreme profiles and their progress" loading="lazy" decoding="async"></div><figcaption>Three profiles, from safe to competitive. Every setting is listed and reversible.</figcaption></figure><figure class="gal-panel" id="gp-3" role="tabpanel" aria-labelledby="gt-3" hidden><div class="gal-frame"><img src="assets/img/app/en/05-hud-overlay.webp" width="1920" height="1200" alt="In-game HUD settings with a live preview showing FPS, 1% low, frame time, GPU and CPU" loading="lazy" decoding="async"></div><figcaption>A light in-game overlay: FPS, 1% low and temperatures, nothing injected into the game.</figcaption></figure><figure class="gal-panel" id="gp-4" role="tabpanel" aria-labelledby="gt-4" hidden><div class="gal-frame"><img src="assets/img/app/en/06-before-after.webp" width="1920" height="1200" alt="Before and after comparison table: CPU load, memory, FPS, 1% low, stutters, ping and jitter" loading="lazy" decoding="async"></div><figcaption>Measure before, optimize, measure after. Real numbers, not promises.</figcaption></figure><figure class="gal-panel" id="gp-5" role="tabpanel" aria-labelledby="gt-5" hidden><div class="gal-frame"><img src="assets/img/app/en/04-system-latency.webp" width="1920" height="1200" alt="System latency page: highest DPC peak, diagnosis and per-core chart" loading="lazy" decoding="async"></div><figcaption>Find the drivers that cause micro-stutters, core by core.</figcaption></figure><figure class="gal-panel" id="gp-6" role="tabpanel" aria-labelledby="gt-6" hidden><div class="gal-frame"><img src="assets/img/app/en/08-karmaaai.webp" width="1920" height="1200" alt="KarmaaAI chat answering a question about FPS drops" loading="lazy" decoding="async"></div><figcaption>Ask about a setting or a game and get a straight answer.</figcaption></figure>
+    <p class="note-c">Real screens from KarmaaOptimizer, with sample data.</p>
+  </div>
+</section>
+
+
 <section id="scan" class="t-dark" aria-labelledby="h-scan">
   <canvas class="scan-fx" aria-hidden="true"></canvas>
   <div class="ringwrap">
@@ -81,6 +91,7 @@
     <h2 class="big" id="h-scan">Know where you stand.</h2>
     <p>No vague “optimized!” message. You get a grade, the checks that failed, and why each one matters.</p>
   </div>
+  <figure class="scan-shot"><div class="gal-frame"><img src="assets/img/app/en/02-scan-score.webp" width="1920" height="1200" alt="Scan &amp; Score screen: grade B, the checks that pass and the ones to fix, each with an Optimize button" loading="lazy" decoding="async"></div></figure>
 </section>
 
 <section id="features" class="t-parch" aria-labelledby="h-feat">
@@ -142,5 +153,6 @@
 setTimeout(function(){if(window.__preDone)return;var p=document.getElementById('pre');if(p)p.style.display='none';document.querySelectorAll('.ch i').forEach(function(i){i.style.transform='none'});},9000);
 </script>
 <script defer src="js/app.js?v=12"></script>
+<script defer src="js/gallery.js?v=1"></script>
 </body>
 </html>
