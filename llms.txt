@@ -7,6 +7,12 @@ Windows 10/11 desktop app that optimizes gaming PCs: health audit scored A+ to F
 - [Site EN](https://karmaaoptimizer.com/): overview, FAQ, offer
 - [Site FR](https://karmaaoptimizer.com/fr/): présentation, FAQ, offre
 
+## Guides et outils gratuits / Free guides and tools
+- [Réglages Call of Duty PC (FR)](https://karmaaoptimizer.com/fr/call-of-duty/) · [Call of Duty PC settings (EN)](https://karmaaoptimizer.com/call-of-duty/): FPS and input lag settings for Black Ops 7 and the latest CoD
+- [Réglages Fortnite PC (FR)](https://karmaaoptimizer.com/fr/fortnite/) · [Fortnite PC settings (EN)](https://karmaaoptimizer.com/fortnite/): Performance mode vs DirectX 12, competitive settings
+- [Convertisseur de sensibilité (FR)](https://karmaaoptimizer.com/fr/convertisseur-sensibilite/) · [Sensitivity converter (EN)](https://karmaaoptimizer.com/sensitivity-converter/): CS2, Valorant, CoD, Apex, Overwatch 2, Fortnite, cm/360
+- [Test de polling rate (FR)](https://karmaaoptimizer.com/fr/test-polling-rate/) · [Mouse polling rate test (EN)](https://karmaaoptimizer.com/mouse-polling-rate-test/): browser test of mouse report rate
+
 ## Acheter / Buy
 - [Discord officiel (ticket)](https://discord.gg/6hES7Hn3u7)
 
