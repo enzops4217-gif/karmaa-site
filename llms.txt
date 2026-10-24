@@ -1,13 +1,17 @@
 # KarmaaOptimizer
-> Optimiseur PC gaming pour Windows 10/11 (application de bureau). Audit de santé noté A+ à F, 91 réglages 100 % réversibles, 3 profils en un clic (Standard, Lourd, Extrême), superposition HUD temps réel, 17 outils de test (souris, latence, réseau), guide BIOS, assistant IA KarmaaAI. Aucune injection dans les jeux : compatible anti-triche. Licence à vie pour 1 PC : 30 €. Obtention : rejoindre le Discord officiel et ouvrir un ticket.
+> Optimiseur PC gaming pour Windows 10/11 (application de bureau). Audit de santé noté A+ à F, 181 réglages 100 % réversibles, 3 profils en un clic (Standard, Lourd, Extrême), superposition HUD temps réel, 17 outils de test (souris, latence, réseau), guide BIOS, assistant IA KarmaaAI. Aucune injection dans les jeux : compatible anti-triche. Licence à vie pour 1 PC : 30 €. Obtention : rejoindre le Discord officiel et ouvrir un ticket.
 
-Windows 10/11 desktop app that optimizes gaming PCs: health audit scored A+ to F, 91 fully reversible tweaks, 3 one-click profiles (Standard, Heavy, Extreme), real-time HUD, 17 test tools (mouse, latency, network), BIOS guidance, KarmaaAI assistant. No injection into games (anti-cheat friendly). Lifetime license, 1 PC: 30 EUR.
+Windows 10/11 desktop app that optimizes gaming PCs: health audit scored A+ to F, 181 fully reversible tweaks, 3 one-click profiles (Standard, Heavy, Extreme), real-time HUD, 17 test tools (mouse, latency, network), BIOS guidance, KarmaaAI assistant. No injection into games (anti-cheat friendly). Lifetime license, 1 PC: 30 EUR.
 
 ## Nouveautés / New
-- Sections Call of Duty et Fortnite : réglages optimisés en un clic, aperçu, sauvegarde, alerte si une mise à jour du jeu les réinitialise / Call of Duty and Fortnite sections: one-click optimized settings, preview, backup, alert when a game update resets them
+- Sections Call of Duty, Fortnite, Apex Legends, CS2 et Rocket League : réglages optimisés en un clic, aperçu, sauvegarde / Call of Duty, Fortnite, Apex Legends, CS2 and Rocket League sections: one-click optimized settings, preview, backup
+- Partage de l’Avant / Après en image ; temps de démarrage de Windows / Before / After image sharing; Windows startup time
 - Vérification du pilote graphique NVIDIA / NVIDIA graphics driver check
 - Test de polling rate natif jusqu’à 8000 Hz, convertisseur de sensibilité / Native polling rate test up to 8000 Hz, sensitivity converter
 - Avant / Après dans les vrais jeux (FPS moyen, 1 % low) / In-game Before / After (average FPS, 1% low)
+
+- Résolution étirée sans bandes noires (essai sécurisé, seulement pendant les parties, tutoriel par jeu) / Stretched resolution without black bars
+- Réglages vérifiés et remis automatiquement après redémarrage ou mise à jour de Windows / Settings checked and restored after restarts and Windows updates
 
 ## Pages
 - [Site EN](https://karmaaoptimizer.com/): overview, FAQ, offer
@@ -19,5 +23,5 @@ Windows 10/11 desktop app that optimizes gaming PCs: health audit scored A+ to F
 ## Faits clés / Key facts
 - Prix / Price: 30 EUR, licence à vie / lifetime, 1 PC
 - Plateforme / Platform: Windows 10, Windows 11
-- Réversibilité / Reversibility: 91 réglages défaisables en un clic / 91 tweaks undone in one click
+- Réversibilité / Reversibility: 181 réglages défaisables en un clic / 181 tweaks undone in one click
 - Support: 7j/7 via Discord / 7 days a week via Discord
