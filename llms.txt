@@ -25,3 +25,8 @@ Windows 10/11 desktop app that optimizes gaming PCs: health audit scored A+ to F
 - Plateforme / Platform: Windows 10, Windows 11
 - Réversibilité / Reversibility: 181 réglages défaisables en un clic / 181 tweaks undone in one click
 - Support: 7j/7 via Discord / 7 days a week via Discord
+
+## Nouveautés 1.0.9 / New in 1.0.9
+- Ventilateurs intelligents : Silencieux, Auto jeu, Performance, Maximum ; pompe de watercooling toujours à 100 % / Smart fans with Quiet, Auto game, Performance, Maximum; watercooling pump always at 100%
+- Résolution étirée créée en un clic sans panneau NVIDIA ou AMD / One-click stretched resolution without the NVIDIA or AMD panel
+- Pilote NVIDIA optimisé en un clic (NVCleanstall) / One-click optimized NVIDIA driver (NVCleanstall)
