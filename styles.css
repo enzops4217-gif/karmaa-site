@@ -68,7 +68,9 @@ main>section+section::before{content:"";position:absolute;top:0;left:50%;transfo
 .sky-paused .hero-stars{animation-play-state:paused}
 @media (prefers-reduced-motion:reduce){.hero-stars{animation:none}}
 /* Fenêtre de l'app à la place de l'ancien PC : cadre sobre, à plat (une inclinaison 3D coûte cher à Firefox / Zen) */
-.hero-shot{position:absolute;right:max(var(--pad),3vw);top:50%;width:min(48vw,820px);margin:0;transform:translateY(-46%);pointer-events:none;isolation:isolate}
+/* Très grands écrans : texte et fenêtre centrés dans 1800 px, sans trou entre eux */
+#hero{--hx:max(var(--pad),calc((100vw - 1800px) / 2));padding-left:var(--hx)}
+.hero-shot{position:absolute;left:calc(var(--hx) + 37rem);right:max(var(--hx),3vw);top:50%;max-width:1150px;margin:0;transform:translateY(-46%);pointer-events:none;isolation:isolate}
 .hero-shot img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line-gold);box-shadow:0 30px 80px rgba(0,0,0,.6)}
 /* Lueur dorée et anneau au sol (comme sous l'ancien PC), statiques */
 .hero-shot::before{content:"";position:absolute;inset:-22% -12%;z-index:-1;background:radial-gradient(closest-side,rgba(212,180,131,.15),rgba(212,180,131,0));pointer-events:none}
@@ -84,7 +86,7 @@ main>section+section::before{content:"";position:absolute;top:0;left:50%;transfo
 @keyframes heroin{from{opacity:0;transform:translateY(18px)}}
 .hero-facts{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;list-style:none;margin:.2rem 0 0;padding:0;font-size:.85rem;color:var(--mute)}
 .hero-facts li::before{content:"✓";color:var(--gold);margin-right:.45rem}
-@media (max-width:1180px) and (min-width:834px){.hero-shot{right:-10vw;width:56vw;opacity:.5}.hero-shot .c-score{display:none}}
+@media (max-width:1180px) and (min-width:834px){.hero-shot{left:auto;right:-10vw;width:56vw;opacity:.5}.hero-shot .c-score{display:none}}
 @media (max-width:833px){.hero-shot{top:calc(52px + 4svh);right:auto;left:50%;width:min(84vw,520px);transform:translateX(-50%)}.hero-shot .c-profile{display:none}.hero-shot .c-score{width:66%;left:-6%;bottom:-16%}.hero-shot::after{display:none}}
 @media (prefers-reduced-motion:reduce){.hero-shot img{animation:none}}
 .hero-copy{position:relative;z-index:1;width:min(34rem,100%);display:flex;flex-direction:column;gap:1.2rem}
