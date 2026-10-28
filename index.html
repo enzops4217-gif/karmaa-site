@@ -3,6 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+/* Langue de l'appareil : français → /fr/, sinon anglais. Le choix fait avec le lien EN / FR est retenu.
+   Robots et aperçus de liens (Google, Discord…) : jamais redirigés, chaque page reste indexée. */
+(function(){try{var here='en';
+var bot=/bot|crawl|spider|slurp|preview|facebookexternalhit|discord|twitter|whatsapp|telegram|slack|lighthouse/i.test(navigator.userAgent);
+var pick=null;try{pick=localStorage.getItem('ko-lang')}catch(_){}
+var dev=String((navigator.languages&&navigator.languages[0])||navigator.language||'en').toLowerCase().indexOf('fr')===0?'fr':'en';
+var want=pick==='fr'||pick==='en'?pick:dev;
+if(!bot&&want!==here)location.replace((want==='fr'?'/fr/':'/')+location.search+location.hash);
+}catch(_){}})();
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[hreflang]');if(a)try{localStorage.setItem('ko-lang',a.getAttribute('hreflang'))}catch(_){}});
+</script>
 <title>Optimize Windows 11 for Gaming | KarmaaOptimizer</title>
 <meta name="description" content="Optimize Windows 11 and 10 for gaming: more FPS, less input lag. A+ to F health score, 181 reversible tweaks, anti-cheat friendly. Lifetime license €50.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
