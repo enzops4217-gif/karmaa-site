@@ -254,6 +254,7 @@ main>section+section::before{content:"";position:absolute;top:0;left:50%;transfo
 /* ===== Fenêtre d'achat (js/checkout.js) ===== */
 .co-lock,.co-lock body{overflow:hidden}
 .co{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:16px}
+.co[hidden]{display:none}
 .co-bg{position:absolute;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:0;transition:opacity .25s var(--ease)}
 .co-card{position:relative;width:min(440px,100%);max-height:calc(100dvh - 32px);overflow:auto;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line-gold);border-radius:24px;padding:28px 24px 20px;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.02) inset;opacity:0;transform:translateY(24px) scale(.97);transition:opacity .3s var(--ease),transform .4s var(--ease)}
 .co.on .co-bg{opacity:1}
