@@ -1,7 +1,7 @@
 # KarmaaOptimizer
-> Optimiseur PC gaming pour Windows 10/11 (application de bureau). Audit de santé noté A+ à F, 181 réglages 100 % réversibles, 3 profils en un clic (Standard, Lourd, Extrême), superposition HUD temps réel, 17 outils de test (souris, latence, réseau), guide BIOS, assistant IA KarmaaAI. Aucune injection dans les jeux : compatible anti-triche. Licence à vie pour 1 PC : 50 €. Achat : paiement par carte sur https://buy.stripe.com/28EcN5eMxgVM5wy5SP53O06, licence et lien de téléchargement envoyés automatiquement par e-mail.
+> Optimiseur PC gaming pour Windows 10/11 (application de bureau). Audit de santé noté A+ à F, 250 réglages 100 % réversibles, 4 profils en un clic (Standard, Lourd, Extrême, Esport), superposition HUD temps réel, 17 outils de test (souris, latence, réseau), guide BIOS, assistant IA KarmaaAI. Aucune injection dans les jeux : compatible anti-triche. Licence à vie pour 1 PC : 50 €. Achat : paiement par carte sur https://buy.stripe.com/28EcN5eMxgVM5wy5SP53O06, licence et lien de téléchargement envoyés automatiquement par e-mail.
 
-Windows 10/11 desktop app that optimizes gaming PCs: health audit scored A+ to F, 181 fully reversible tweaks, 3 one-click profiles (Standard, Heavy, Extreme), real-time HUD, 17 test tools (mouse, latency, network), BIOS guidance, KarmaaAI assistant. No injection into games (anti-cheat friendly). Lifetime license, 1 PC: 50 EUR.
+Windows 10/11 desktop app that optimizes gaming PCs: health audit scored A+ to F, 250 fully reversible tweaks, 4 one-click profiles (Standard, Heavy, Extreme, Esport), real-time HUD, 17 test tools (mouse, latency, network), BIOS guidance, KarmaaAI assistant. No injection into games (anti-cheat friendly). Lifetime license, 1 PC: 50 EUR.
 
 ## Nouveautés / New
 - Sections Call of Duty, Fortnite, Apex Legends, CS2 et Rocket League : réglages optimisés en un clic, aperçu, sauvegarde / Call of Duty, Fortnite, Apex Legends, CS2 and Rocket League sections: one-click optimized settings, preview, backup
@@ -24,7 +24,7 @@ Windows 10/11 desktop app that optimizes gaming PCs: health audit scored A+ to F
 ## Faits clés / Key facts
 - Prix / Price: 50 EUR, licence à vie / lifetime, 1 PC
 - Plateforme / Platform: Windows 10, Windows 11
-- Réversibilité / Reversibility: 181 réglages défaisables en un clic / 181 tweaks undone in one click
+- Réversibilité / Reversibility: 250 réglages défaisables en un clic / 250 tweaks undone in one click
 - Support: 7j/7 via Discord / 7 days a week via Discord
 
 ## Nouveautés 1.0.9 / New in 1.0.9
