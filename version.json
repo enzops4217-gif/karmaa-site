@@ -1,1 +1,1 @@
-{"version":"1.2.7","notes":{"fr":"Profil NVIDIA réglé pour la latence la plus basse, redémarrage proposé seulement à la fin du profil.","en":"NVIDIA profile tuned for the lowest latency, restart offered only once the profile is done."},"url":"https://discord.gg/6hES7Hn3u7"}
+{"version":"1.2.8","notes":{"fr":"Profil Esport renforcé avec les réglages validés au labo (processeur, interruptions, MMCSS, réseau).","en":"Esport profile strengthened with lab-validated settings (CPU, interrupts, MMCSS, network)."},"url":"https://discord.gg/6hES7Hn3u7"}
