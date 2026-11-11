@@ -23,7 +23,7 @@
     var norm = function (s) { return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, ' ').trim(); };
     // Index : titres de sections, éléments de listes et questions (avec le texte de la réponse)
     var items = [];
-    $$('main section').forEach(function (sec) {
+    $$('main section, main article').forEach(function (sec) {
       var h2 = $('h2', sec); var where = h2 ? h2.textContent.replace(/\s+/g, ' ').trim() : '';
       if (h2) items.push({ label: where, ctx: '', text: norm(where + ' ' + sec.textContent).slice(0, 4000), el: sec });
       $$('details', sec).forEach(function (d) {

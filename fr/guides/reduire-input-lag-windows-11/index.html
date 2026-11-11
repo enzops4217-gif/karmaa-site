@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[hreflang]');if(a)try{localStorage.setItem('ko-lang',a.getAttribute('hreflang'))}catch(_){}});</script>
+<title>Réduire l’input lag sur Windows 11 : le guide complet</title>
+<meta name="description" content="Réduis l’input lag sur Windows 11 pas à pas : Reflex, V-Sync, limite de FPS, mode d’affichage, alimentation, souris. Guide gratuit et manuel.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<meta name="author" content="KarmaaOptimizer">
+<link rel="canonical" href="https://karmaaoptimizer.com/fr/guides/reduire-input-lag-windows-11/">
+<link rel="alternate" hreflang="fr" href="https://karmaaoptimizer.com/fr/guides/reduire-input-lag-windows-11/">
+<link rel="alternate" hreflang="en" href="https://karmaaoptimizer.com/guides/reduce-input-lag-windows-11/">
+<link rel="alternate" hreflang="x-default" href="https://karmaaoptimizer.com/guides/reduce-input-lag-windows-11/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="KarmaaOptimizer">
+<meta property="og:title" content="Réduire l’input lag sur Windows 11 : le guide complet"><meta property="og:description" content="Réduis l’input lag sur Windows 11 pas à pas : Reflex, V-Sync, limite de FPS, mode d’affichage, alimentation, souris. Guide gratuit et manuel.">
+<meta property="og:url" content="https://karmaaoptimizer.com/fr/guides/reduire-input-lag-windows-11/"><meta property="og:image" content="https://karmaaoptimizer.com/assets/og-fr.jpg?v=50"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:alt" content="KarmaaOptimizer">
+<meta property="og:locale" content="fr_FR"><meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Réduire l’input lag sur Windows 11 : le guide complet"><meta name="twitter:description" content="Réduis l’input lag sur Windows 11 pas à pas : Reflex, V-Sync, limite de FPS, mode d’affichage, alimentation, souris. Guide gratuit et manuel."><meta name="twitter:image" content="https://karmaaoptimizer.com/assets/og-fr.jpg?v=50">
+<link rel="apple-touch-icon" href="/assets/logo.png?v=3">
+<link rel="icon" href="/assets/logo.png?v=3">
+<link rel="stylesheet" href="/styles.css?v=24">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://karmaaoptimizer.com/#org","name":"KarmaaOptimizer","url":"https://karmaaoptimizer.com/","logo":{"@type":"ImageObject","url":"https://karmaaoptimizer.com/assets/logo.png?v=3","width":512,"height":512}},{"@type":"Article","@id":"https://karmaaoptimizer.com/fr/guides/reduire-input-lag-windows-11/#article","headline":"Comment réduire l’input lag sur Windows 11","description":"Réduis l’input lag sur Windows 11 pas à pas : Reflex, V-Sync, limite de FPS, mode d’affichage, alimentation, souris. Guide gratuit et manuel.","inLanguage":"fr","datePublished":"2026-11-22","dateModified":"2026-11-22","mainEntityOfPage":"https://karmaaoptimizer.com/fr/guides/reduire-input-lag-windows-11/","image":"https://karmaaoptimizer.com/assets/og-fr.jpg?v=50","author":{"@id":"https://karmaaoptimizer.com/#org"},"publisher":{"@id":"https://karmaaoptimizer.com/#org"},"wordCount":1367},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://karmaaoptimizer.com/fr/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://karmaaoptimizer.com/fr/guides/"},{"@type":"ListItem","position":3,"name":"Réduire l’input lag sur Windows 11"}]},{"@type":"HowTo","name":"Réduire l’input lag sur Windows 11","inLanguage":"fr","totalTime":"PT30M","step":[{"@type":"HowToStep","position":1,"name":"Mesure ton point de départ","text":"Note tes FPS et ta latence dans une scène reproductible avant de toucher à quoi que ce soit.","url":"https://karmaaoptimizer.com/fr/guides/reduire-input-lag-windows-11/#mesurer"},{"@type":"HowToStep","position":2,"name":"Active NVIDIA Reflex ou AMD Anti-Lag","text":"Active Reflex (Activé ou Activé + Boost) dans les jeux compatibles, ou Anti-Lag dans AMD Software.","url":"https://karmaaoptimizer.com/fr/guides/reduire-input-lag-windows-11/#reflex"},{"@type":"HowToStep","position":3,"name":"Règle la V-Sync et limite tes FPS","text":"Coupe la V-Sync du jeu et limite les FPS quelques images sous ton taux de rafraîchissement avec G-Sync/FreeSync, ou ne limite pas sans VRR.","url":"https://karmaaoptimizer.com/fr/guides/reduire-input-lag-windows-11/#vsync"},{"@type":"HowToStep","position":4,"name":"Choisis le bon mode d’affichage","text":"Plein écran, ou fenêtré sans bordure avec « Optimisations pour les jeux fenêtrés » activé.","url":"https://karmaaoptimizer.com/fr/guides/reduire-input-lag-windows-11/#affichage"},{"@type":"HowToStep","position":5,"name":"Vérifie le rafraîchissement et l’alimentation","text":"Choisis le vrai taux de rafraîchissement de ton écran et le mode d’alimentation le plus performant.","url":"https://karmaaoptimizer.com/fr/guides/reduire-input-lag-windows-11/#rafraichissement"},{"@type":"HowToStep","position":6,"name":"Règle la souris","text":"Désactive « Améliorer la précision du pointeur », passe à 1000 Hz ou plus, branche-la à l’arrière.","url":"https://karmaaoptimizer.com/fr/guides/reduire-input-lag-windows-11/#souris"},{"@type":"HowToStep","position":7,"name":"Allège l’arrière-plan","text":"Ferme les overlays et l’enregistrement, et vérifie la latence des pilotes avec LatencyMon.","url":"https://karmaaoptimizer.com/fr/guides/reduire-input-lag-windows-11/#arriere-plan"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="top">
+  <a href="/fr/" class="logo" aria-label="KarmaaOptimizer"><img src="/assets/logo.png?v=3" alt="" width="30" height="30">Karmaa<b>Optimizer</b></a>
+  <nav aria-label="Navigation principale"><a href="/fr/guides/">Guides</a><a href="/fr/#features">Fonctionnalités</a><a href="/fr/#offre">Prix</a><a href="/fr/#faq">FAQ</a></nav>
+  <a class="lang" href="/guides/reduce-input-lag-windows-11/" hreflang="en" lang="en" title="English version">EN</a>
+  <a class="btn hide-sm" href="https://buy.stripe.com/28EcN5eMxgVM5wy5SP53O06" target="_blank" rel="noopener noreferrer"><span>Acheter · 50 €</span></a>
+</header>
+
+<main id="main" class="doc-main">
+<article class="doc">
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/fr/">Accueil</a></li><li><a href="/fr/guides/">Guides</a></li><li aria-current="page">Réduire l’input lag sur Windows 11</li></ol></nav>
+<h1>Comment réduire l’input lag sur Windows 11</h1>
+<p class="doc-meta">Mis à jour le <time datetime="2026-11-22">22 novembre 2026</time> · 6 min de lecture</p>
+<p class="doc-lede">L’input lag, c’est le délai entre ton clic et le moment où le résultat s’affiche. Sur Windows 11, l’essentiel vient de quelques réglages dans ton jeu, ton pilote graphique et Windows. Voici comment les corriger à la main, dans l’ordre qui compte le plus.</p>
+<h2 id="definition">Ce qu’est vraiment l’input lag</h2>
+<p>Quand tu cliques, le signal traverse une chaîne : la souris l’envoie en USB, Windows le passe au jeu, le jeu calcule l’image, la carte graphique la rend, puis l’écran l’affiche. La latence totale (souvent appelée <strong>latence système</strong> ou « click-to-photon ») est la somme de tout ça. Sur un PC gamer correct, elle tourne en général entre 15 et 40 ms. L’essentiel vient de la <strong>file de rendu</strong> (les images qui attendent la carte graphique) et de la <strong>V-Sync</strong>, pas de la souris ni de Windows.</p>
+<p>C’est pour ça que l’ordre ci-dessous compte : corrige d’abord les gros postes, ensuite les petits.</p>
+
+<h2 id="mesurer">1. Mesure avant de changer quoi que ce soit</h2>
+<p>Sans mesure, tu devines. Choisis une scène que tu peux refaire à l’identique (map d’entraînement, replay, partie perso vide) et note :</p>
+<ul>
+<li>tes FPS moyens et tes <strong>1 % low</strong> (ils montrent mieux les saccades que la moyenne) ;</li>
+<li>la latence si ton jeu l’affiche : beaucoup de jeux avec NVIDIA Reflex ont une stat « Latence de rendu » ou « Latence PC » dans leur overlay de performance ;</li>
+<li>sur NVIDIA, l’outil gratuit <strong>FrameView</strong> enregistre la latence PC dans les jeux Reflex.</li>
+</ul>
+<p>Change <strong>un seul réglage à la fois</strong> et remesure dans la même scène. Les résultats varient beaucoup d’un PC à l’autre.</p>
+
+<h2 id="reflex">2. Active NVIDIA Reflex ou AMD Anti-Lag</h2>
+<p>C’est le plus gros gain dans la plupart des jeux compétitifs, parce que ça garde la file de rendu vide quand ta carte graphique est le facteur limitant.</p>
+<ul>
+<li><strong>NVIDIA Reflex</strong> : dans les options graphiques du jeu, mets-le sur <em>Activé</em>. <em>Activé + Boost</em> garde en plus les fréquences du GPU au maximum ; ça aide un peu quand tu es limité par le processeur, au prix d’une consommation plus élevée.</li>
+<li><strong>Jeux sans Reflex</strong> (NVIDIA) : ouvre le Panneau de configuration NVIDIA → Gérer les paramètres 3D → <em>Mode de faible latence</em> → <em>Ultra</em> (DirectX 11 et plus ancien seulement ; aucun effet en DirectX 12 ou Vulkan).</li>
+<li><strong>AMD</strong> : ouvre AMD Software → Jeux → Graphismes → active <em>Radeon Anti-Lag</em>. Dans les jeux compatibles, <em>Anti-Lag 2</em> se règle directement dans le jeu.</li>
+</ul>
+
+<h2 id="vsync">3. Règle la V-Sync et limite tes FPS correctement</h2>
+<p>La V-Sync classique peut ajouter une image complète de retard, voire plus. Ce qu’il faut faire dépend de ton écran :</p>
+<h3>Avec G-Sync ou FreeSync (fréquence variable)</h3>
+<ol>
+<li>Active G-Sync / FreeSync dans le pilote et sur l’écran.</li>
+<li><strong>Coupe</strong> la V-Sync dans le jeu.</li>
+<li><strong>Active</strong> la V-Sync dans le Panneau NVIDIA (Gérer les paramètres 3D → Synchronisation verticale → Activé). Avec G-Sync, ça n’ajoute pas le retard habituel de la V-Sync : ça évite juste le tearing en haut de la plage.</li>
+<li>Limite tes FPS quelques images sous ton taux de rafraîchissement (par exemple 237 sur un écran 240 Hz, 141 sur 144 Hz). Reflex applique cette limite tout seul quand G-Sync et V-Sync sont activés.</li>
+</ol>
+<h3>Sans fréquence variable</h3>
+<p>Laisse la V-Sync coupée partout. Des FPS au-dessus du taux de rafraîchissement baissent quand même la latence, au prix d’un peu de tearing. Si tes FPS varient beaucoup, une limite stable (dans le jeu ou le pilote) que ton PC tient presque tout le temps est souvent plus agréable que des FPS libres mais instables.</p>
+
+<h2 id="affichage">4. Choisis le bon mode d’affichage</h2>
+<p>Sur Windows 11, le mode fenêtré sans bordure n’est plus le piège à latence qu’il était, tant que le jeu utilise le mode de présentation moderne (« flip ») :</p>
+<ol>
+<li>Ouvre <strong>Paramètres → Système → Écran → Graphiques</strong>.</li>
+<li>Clique sur <em>Paramètres graphiques avancés</em> (ou <em>Modifier les paramètres graphiques par défaut</em> sur les anciennes versions).</li>
+<li>Active <strong>Optimisations pour les jeux fenêtrés</strong>.</li>
+<li>Sur la même page, essaie la <strong>Planification de processeur graphique à accélération matérielle</strong>. Il faut redémarrer. Ça aide sur certains PC et rien sur d’autres : mesure dans les deux cas.</li>
+</ol>
+<p>Si le jeu propose un vrai <em>Plein écran (exclusif)</em>, ça reste un choix sûr. Évite de jouer dans une fenêtre classique avec la barre des tâches visible.</p>
+
+<h2 id="rafraichissement">5. Vérifie ton taux de rafraîchissement et ton alimentation</h2>
+<p>Beaucoup de joueurs ont un écran 144 ou 240 Hz qui tourne à 60 Hz sans le savoir.</p>
+<ol>
+<li>Va dans <strong>Paramètres → Système → Écran → Affichage avancé</strong>.</li>
+<li>Sous <em>Choisir une fréquence d’actualisation</em>, prends la valeur la plus haute. Si elle n’apparaît pas, vérifie ton câble (DisplayPort ou HDMI récent) et que tu es branché sur la carte graphique, pas sur la carte mère.</li>
+<li>Va dans <strong>Paramètres → Système → Alimentation et batterie</strong> et mets le <em>Mode d’alimentation</em> sur <strong>Performances optimales</strong>. Sur un PC fixe, tu peux aussi choisir le mode <em>Performances élevées</em> dans l’ancien Panneau de configuration → Options d’alimentation.</li>
+</ol>
+
+<h2 id="souris">6. Règle la souris</h2>
+<ul>
+<li><strong>Améliorer la précision du pointeur</strong> : Panneau de configuration → Souris → Options du pointeur → décoche-la. C’est de l’accélération ; la plupart des jeux en raw input l’ignorent, mais elle joue sur les menus et certains vieux jeux.</li>
+<li><strong>Polling rate</strong> : au moins 1000 Hz dans le logiciel de ta souris. Plus haut (2000 à 8000 Hz), tu gagnes des fractions de milliseconde mais ça coûte du processeur. Lis notre <a href="../polling-rate-souris-1000-4000-8000/">guide sur le polling rate</a> avant de passer à 8000 Hz.</li>
+<li><strong>Port USB</strong> : branche la souris (ou son dongle sans fil) sur un port arrière de la carte mère, pas en façade, sur un hub ou sur l’écran. Détails dans notre <a href="../port-usb-souris-gaming/">guide sur les ports USB</a>.</li>
+</ul>
+
+<h2 id="arriere-plan">7. Allège l’arrière-plan</h2>
+<p>Les programmes en arrière-plan ajoutent rarement de l’input lag direct, mais ils créent des pics de frametime qui donnent une sensation de lag.</p>
+<ul>
+<li>Coupe l’enregistrement en arrière-plan : <strong>Paramètres → Jeux → Captures</strong> → désactive <em>Enregistrer ce qui s’est passé</em>. Coupe aussi le replay instantané de l’overlay NVIDIA ou AMD si tu ne t’en sers pas.</li>
+<li>Ferme les overlays inutiles (Discord, launchers, logiciels RGB, outils de monitoring).</li>
+<li>Regarde <strong>Gestionnaire des tâches → Applications de démarrage</strong> et désactive ce qui n’a pas besoin de se lancer.</li>
+<li>Si tu as des micro-saccades au hasard, lance le logiciel gratuit <strong>LatencyMon</strong> quelques minutes. S’il pointe un pilote (réseau, audio, stockage), mets d’abord ce pilote à jour depuis le site du fabricant.</li>
+</ul>
+<div class="tip"><p><strong>Garde ton pilote graphique à jour</strong>, mais ne fais une installation propre que si quelque chose ne va pas. Un nouveau pilote peut changer la latence dans un jeu : remesure après chaque mise à jour.</p></div>
+
+<h2 id="mythes">Les réglages qui n’aident pas (ou qui font du mal)</h2>
+<ul>
+<li><strong>Les « tweaks latence » du registre</strong> vus en vidéo : beaucoup ne font rien sur Windows 11, et certains (timers, interruptions) peuvent rendre le PC instable. Si tu en testes un, note la valeur d’origine avant.</li>
+<li><strong>Désactiver tous les services Windows</strong> : ça peut casser les mises à jour, le Microsoft Store, le son ou les services anti-triche, sans gain mesurable.</li>
+<li><strong>Le réglage « images pré-rendues » dans les jeux DirectX 12</strong> : le réglage du pilote ne s’y applique pas. Utilise Reflex ou Anti-Lag 2.</li>
+</ul>
+
+<h2 id="recap">Check-list rapide</h2>
+<ol>
+<li>Reflex activé (ou Mode faible latence Ultra / Anti-Lag).</li>
+<li>V-Sync du jeu coupée ; avec G-Sync/FreeSync : V-Sync du pilote activée et FPS limités quelques images sous le rafraîchissement.</li>
+<li>Plein écran, ou sans bordure avec Optimisations pour les jeux fenêtrés.</li>
+<li>Bon taux de rafraîchissement, alimentation sur Performances optimales.</li>
+<li>Précision du pointeur désactivée, 1000 Hz ou plus, port USB arrière.</li>
+<li>Enregistrement et overlays inutiles coupés.</li>
+<li>Remesure dans la même scène.</li>
+</ol>
+<aside class="doc-cta glass" aria-labelledby="cta-h">
+  <h2 id="cta-h">Le faire en un clic avec KarmaaOptimizer</h2>
+  <p>Toutes les étapes ci-dessus se font à la main. KarmaaOptimizer automatise simplement la partie Windows : le Scan vérifie ton taux de rafraîchissement, ton mode d’alimentation, le Mode Jeu, l’enregistrement en arrière-plan et ton pilote graphique, puis corrige ce qui ne va pas en un clic. Il mesure aussi la latence des pilotes cœur par cœur et te laisse comparer Avant / Après dans tes propres jeux. Chaque changement s’annule en un clic. On ne promet aucun chiffre de FPS ou de millisecondes : tu mesures toi-même.</p>
+  <div class="cta"><a class="btn" href="https://buy.stripe.com/28EcN5eMxgVM5wy5SP53O06" target="_blank" rel="noopener noreferrer"><span>Acheter pour 50 €</span></a><a class="btn ghost" href="/fr/"><span>Voir l’app</span></a></div>
+</aside>
+<section class="doc-related" aria-labelledby="rel-h"><h2 id="rel-h">Guides liés</h2><ul><li><a href="/fr/guides/meilleurs-reglages-windows-11-gaming/">Meilleurs réglages Windows 11 pour le gaming</a></li><li><a href="/fr/guides/polling-rate-souris-1000-4000-8000/">Polling rate souris : 1000, 4000 ou 8000 Hz</a></li><li><a href="/fr/guides/port-usb-souris-gaming/">Quel port USB pour ta souris gaming</a></li></ul></section>
+</article>
+</main>
+
+<footer id="footer">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="/fr/" class="logo"><img src="/assets/logo.png?v=3" alt="" width="30" height="30" loading="lazy">Karmaa<b>Optimizer</b></a>
+      <p>Un optimiseur Windows pour les joueurs. 250 réglages réversibles, rien d’injecté.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Navigation du pied de page"><a href="/fr/guides/">Guides</a><a href="/fr/#features">Fonctionnalités</a><a href="/fr/#offre">Prix</a><a href="/fr/#faq">FAQ</a></nav>
+    <nav class="foot-nav" aria-label="Informations légales"><a href="/fr/legal/mentions-legales/">Mentions légales</a><a href="/fr/legal/cgv/">CGV</a><a href="/fr/legal/confidentialite/">Confidentialité</a><a href="/fr/legal/remboursement/">Remboursement</a><a href="/fr/legal/contact/">Contact</a></nav>
+    <div class="foot-side">
+      <a href="https://discord.gg/6hES7Hn3u7" target="_blank" rel="noopener noreferrer">Discord</a>
+      <span>De l’aide sur Discord, 7 jours sur 7</span>
+      <a href="/guides/reduce-input-lag-windows-11/" hreflang="en" lang="en">English version</a>
+    </div>
+  </div>
+  <div class="foot"><span>© 2026 KarmaaOptimizer</span><span><time datetime="2026-11-22">Mis à jour le 22 novembre 2026</time></span></div>
+</footer>
+<script defer src="/js/checkout.js?v=2"></script>
+<script defer src="/js/extras.js?v=3"></script>
+</body>
+</html>

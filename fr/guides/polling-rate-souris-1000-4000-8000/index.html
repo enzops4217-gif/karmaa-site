@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[hreflang]');if(a)try{localStorage.setItem('ko-lang',a.getAttribute('hreflang'))}catch(_){}});</script>
+<title>Polling rate souris : 1000, 4000 ou 8000 Hz ?</title>
+<meta name="description" content="1000, 4000 ou 8000 Hz : ce que le polling rate change en latence et en fluidité, ce qu’il coûte au processeur, et comment choisir et tester le bon.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<meta name="author" content="KarmaaOptimizer">
+<link rel="canonical" href="https://karmaaoptimizer.com/fr/guides/polling-rate-souris-1000-4000-8000/">
+<link rel="alternate" hreflang="fr" href="https://karmaaoptimizer.com/fr/guides/polling-rate-souris-1000-4000-8000/">
+<link rel="alternate" hreflang="en" href="https://karmaaoptimizer.com/guides/mouse-polling-rate-1000-4000-8000/">
+<link rel="alternate" hreflang="x-default" href="https://karmaaoptimizer.com/guides/mouse-polling-rate-1000-4000-8000/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="KarmaaOptimizer">
+<meta property="og:title" content="Polling rate souris : 1000, 4000 ou 8000 Hz ?"><meta property="og:description" content="1000, 4000 ou 8000 Hz : ce que le polling rate change en latence et en fluidité, ce qu’il coûte au processeur, et comment choisir et tester le bon.">
+<meta property="og:url" content="https://karmaaoptimizer.com/fr/guides/polling-rate-souris-1000-4000-8000/"><meta property="og:image" content="https://karmaaoptimizer.com/assets/og-fr.jpg?v=50"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:alt" content="KarmaaOptimizer">
+<meta property="og:locale" content="fr_FR"><meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Polling rate souris : 1000, 4000 ou 8000 Hz ?"><meta name="twitter:description" content="1000, 4000 ou 8000 Hz : ce que le polling rate change en latence et en fluidité, ce qu’il coûte au processeur, et comment choisir et tester le bon."><meta name="twitter:image" content="https://karmaaoptimizer.com/assets/og-fr.jpg?v=50">
+<link rel="apple-touch-icon" href="/assets/logo.png?v=3">
+<link rel="icon" href="/assets/logo.png?v=3">
+<link rel="stylesheet" href="/styles.css?v=24">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://karmaaoptimizer.com/#org","name":"KarmaaOptimizer","url":"https://karmaaoptimizer.com/","logo":{"@type":"ImageObject","url":"https://karmaaoptimizer.com/assets/logo.png?v=3","width":512,"height":512}},{"@type":"Article","@id":"https://karmaaoptimizer.com/fr/guides/polling-rate-souris-1000-4000-8000/#article","headline":"Polling rate de souris : 1000, 4000 ou 8000 Hz ?","description":"1000, 4000 ou 8000 Hz : ce que le polling rate change en latence et en fluidité, ce qu’il coûte au processeur, et comment choisir et tester le bon.","inLanguage":"fr","datePublished":"2026-11-22","dateModified":"2026-11-22","mainEntityOfPage":"https://karmaaoptimizer.com/fr/guides/polling-rate-souris-1000-4000-8000/","image":"https://karmaaoptimizer.com/assets/og-fr.jpg?v=50","author":{"@id":"https://karmaaoptimizer.com/#org"},"publisher":{"@id":"https://karmaaoptimizer.com/#org"},"wordCount":1240},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://karmaaoptimizer.com/fr/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://karmaaoptimizer.com/fr/guides/"},{"@type":"ListItem","position":3,"name":"Polling rate souris : 1000, 4000 ou 8000 Hz"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="top">
+  <a href="/fr/" class="logo" aria-label="KarmaaOptimizer"><img src="/assets/logo.png?v=3" alt="" width="30" height="30">Karmaa<b>Optimizer</b></a>
+  <nav aria-label="Navigation principale"><a href="/fr/guides/">Guides</a><a href="/fr/#features">Fonctionnalités</a><a href="/fr/#offre">Prix</a><a href="/fr/#faq">FAQ</a></nav>
+  <a class="lang" href="/guides/mouse-polling-rate-1000-4000-8000/" hreflang="en" lang="en" title="English version">EN</a>
+  <a class="btn hide-sm" href="https://buy.stripe.com/28EcN5eMxgVM5wy5SP53O06" target="_blank" rel="noopener noreferrer"><span>Acheter · 50 €</span></a>
+</header>
+
+<main id="main" class="doc-main">
+<article class="doc">
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/fr/">Accueil</a></li><li><a href="/fr/guides/">Guides</a></li><li aria-current="page">Polling rate souris : 1000, 4000 ou 8000 Hz</li></ol></nav>
+<h1>Polling rate de souris : 1000, 4000 ou 8000 Hz ?</h1>
+<p class="doc-meta">Mis à jour le <time datetime="2026-11-22">22 novembre 2026</time> · 6 min de lecture</p>
+<p class="doc-lede">Les souris gaming montent maintenant jusqu’à 8000 Hz. Plus haut, ça a l’air mieux, mais le gain se compte en fractions de milliseconde et ça coûte du processeur. Voici ce que chaque valeur change vraiment, et comment choisir selon ton PC et ton écran.</p>
+<h2 id="definition">Ce que veut dire polling rate</h2>
+<p>Le polling rate, c’est le nombre de fois par seconde où la souris envoie sa position au PC, en Hz. Le temps entre deux envois, c’est simplement 1 divisé par cette valeur :</p>
+<table>
+<thead><tr><th>Polling rate</th><th>Intervalle entre deux envois</th><th>Retard moyen ajouté</th></tr></thead>
+<tbody>
+<tr><td>125 Hz</td><td>8 ms</td><td>environ 4 ms</td></tr>
+<tr><td>500 Hz</td><td>2 ms</td><td>environ 1 ms</td></tr>
+<tr><td>1000 Hz</td><td>1 ms</td><td>environ 0,5 ms</td></tr>
+<tr><td>2000 Hz</td><td>0,5 ms</td><td>environ 0,25 ms</td></tr>
+<tr><td>4000 Hz</td><td>0,25 ms</td><td>environ 0,125 ms</td></tr>
+<tr><td>8000 Hz</td><td>0,125 ms</td><td>environ 0,06 ms</td></tr>
+</tbody>
+</table>
+<p>Le « retard moyen » vaut la moitié de l’intervalle : un mouvement arrive à un moment aléatoire et attend en moyenne un demi-cycle avant d’être envoyé. Passer de 1000 à 8000 Hz fait donc gagner <strong>moins d’une demi-milliseconde</strong> en moyenne. C’est réel, mais petit face à la latence totale du système, qui tourne en général entre 15 et 40 ms (voir notre <a href="../reduire-input-lag-windows-11/">guide sur l’input lag</a>).</p>
+
+<h2 id="fluidite">Le vrai gain : un mouvement plus fluide sur les écrans rapides</h2>
+<p>Le plus gros avantage n’est pas la latence brute mais la <strong>régularité</strong>. Sur un écran 240, 360 ou 500 Hz, chaque image dure 2 à 4 ms. À 1000 Hz, une image reçoit un nombre variable de positions (par exemple 2 ou 3 à 360 Hz), ce qui peut créer de légères micro-saccades quand tu suis une cible. À 4000 ou 8000 Hz, chaque image en reçoit beaucoup, donc le curseur et la caméra bougent plus régulièrement. Sur un écran 60 ou 144 Hz, tu ne verras presque aucune différence au-dessus de 1000 Hz.</p>
+
+<h2 id="cout">Le prix : charge processeur et compatibilité</h2>
+<p>Chaque envoi est une interruption USB que Windows et le jeu doivent traiter. À 8000 Hz, c’est huit fois plus de travail qu’à 1000 Hz.</p>
+<ul>
+<li><strong>Usage du processeur</strong> : sur un processeur récent, c’est quelques pourcents, mais sur un processeur ancien ou déjà chargé, ça peut baisser les FPS ou créer des saccades, surtout dans les jeux limités par le CPU.</li>
+<li><strong>Compatibilité des jeux</strong> : la plupart des jeux récents en raw input gèrent bien 8000 Hz. Certains vieux jeux ou moteurs saccadent ou perdent des FPS quand la souris bouge vite. Si un jeu se comporte mal, baisse la valeur pour ce jeu.</li>
+<li><strong>Branchement USB</strong> : les hautes fréquences sont sensibles aux hubs, aux ports en façade et aux contrôleurs partagés. Utilise un port arrière de la carte mère (voir notre <a href="../port-usb-souris-gaming/">guide sur les ports USB</a>).</li>
+<li><strong>Batterie en sans fil</strong> : à 4000 ou 8000 Hz, l’autonomie peut fortement baisser. Regarde les chiffres du fabricant.</li>
+<li><strong>Mouvement du capteur</strong> : pour envoyer 8000 positions différentes par seconde, la souris doit bouger assez vite et à un DPI assez élevé. À bas DPI et en mouvement lent, beaucoup d’envois sont identiques. Certains fabricants conseillent 1600 DPI ou plus à 8000 Hz.</li>
+</ul>
+
+<h2 id="choisir">Lequel choisir</h2>
+<table>
+<thead><tr><th>Ta config</th><th>Bon choix</th></tr></thead>
+<tbody>
+<tr><td>Écran 60–144 Hz, n’importe quel processeur</td><td>1000 Hz</td></tr>
+<tr><td>Écran 240 Hz, processeur milieu de gamme</td><td>1000 ou 2000 Hz</td></tr>
+<tr><td>Écran 240–360 Hz, processeur récent</td><td>2000 ou 4000 Hz</td></tr>
+<tr><td>Écran 360–500 Hz, processeur haut de gamme, FPS compétitifs</td><td>4000 ou 8000 Hz, après test</td></tr>
+<tr><td>Processeur ancien, jeux limités par le CPU, ou saccades à haute fréquence</td><td>1000 Hz</td></tr>
+<tr><td>Sans fil et l’autonomie compte</td><td>1000 ou 2000 Hz</td></tr>
+</tbody>
+</table>
+<p>Pour beaucoup de joueurs, <strong>2000 à 4000 Hz</strong> est le bon compromis : l’essentiel du gain de fluidité sans tout le coût processeur du 8000 Hz.</p>
+
+<h2 id="changer">Comment le changer</h2>
+<ol>
+<li>Ouvre le logiciel de ta souris (Logitech G HUB, Razer Synapse, Pulsar, Lamzu, Zowie, etc.) ou le driver web du fabricant.</li>
+<li>Cherche le réglage <em>Polling rate</em> ou <em>Report rate</em> (taux d’interrogation).</li>
+<li>Pour les souris sans fil, 4000 et 8000 Hz demandent souvent un dongle spécifique (parfois vendu à part). Branche-le sur un port USB arrière.</li>
+<li>Certaines souris gardent la valeur en mémoire ; d’autres ont besoin que le logiciel reste installé. Vérifie après un redémarrage.</li>
+</ol>
+
+<h2 id="tester">Comment tester ton polling rate</h2>
+<p>Ne te fie pas à la boîte : vérifie ce que ton PC reçoit vraiment.</p>
+<ul>
+<li>Utilise un testeur de polling rate (en ligne ou dans une appli) et fais des cercles rapides avec la souris. La valeur doit rester proche de celle choisie. De grosses chutes indiquent un souci d’USB, de câble, de dongle ou de processeur.</li>
+<li>Attention : les navigateurs peuvent limiter ou lisser les mesures, surtout au-dessus de 1000 Hz. Un testeur Windows natif est plus fiable à 4000–8000 Hz.</li>
+<li>Teste ensuite en jeu : même map, même scénario, à 1000 Hz puis à ta valeur plus haute. Regarde les FPS, les 1 % low et la sensation en tracking.</li>
+</ul>
+
+<h2 id="windows">Les réglages Windows liés</h2>
+<ul>
+<li><strong>Améliorer la précision du pointeur</strong> : désactive-la dans Panneau de configuration → Souris → Options du pointeur. C’est de l’accélération, pas de la précision.</li>
+<li><strong>Vitesse du pointeur Windows</strong> : laisse le curseur sur le 6e cran (la valeur par défaut, 1:1). Change plutôt la sensibilité dans le logiciel de la souris (DPI) ou dans le jeu.</li>
+<li><strong>Raw input</strong> : active-le dans les jeux qui le proposent, pour que le jeu lise la souris directement.</li>
+<li><strong>Suspension sélective USB</strong> : sur certains PC, la mettre sur <em>Désactivé</em> dans les paramètres avancés du mode d’alimentation évite qu’un dongle ou une souris en veille se réveille en retard. L’effet est en général faible sur un PC fixe.</li>
+</ul>
+
+<h2 id="idees-recues">Les idées reçues</h2>
+<ul>
+<li><strong>« Plus c’est haut, mieux c’est. »</strong> Pas si ton processeur, ton jeu ou ton port USB ne suivent pas. Un 2000 Hz stable vaut mieux qu’un 8000 Hz qui tombe à 3000 Hz à chaque flick.</li>
+<li><strong>« 8000 Hz fait mieux viser. »</strong> Ça rend le mouvement plus fluide et un peu plus réactif. Ta visée dépend toujours de ta sensibilité, de ton entraînement et de FPS stables.</li>
+<li><strong>« Polling rate et DPI, c’est pareil. »</strong> Le DPI, c’est la distance parcourue par le curseur pour un pouce de mouvement. Le polling rate, c’est la fréquence à laquelle la souris envoie ce mouvement. Changer l’un ne change pas l’autre.</li>
+<li><strong>« C’est Windows qui le règle. »</strong> Windows n’a pas de réglage de polling rate pour les souris gaming récentes : il est stocké dans le firmware de la souris et se règle dans le logiciel du fabricant.</li>
+</ul>
+
+<h2 id="resume">En bref</h2>
+<ul>
+<li>Passer de 1000 à 8000 Hz fait gagner moins de 0,5 ms en moyenne : réel, mais petit.</li>
+<li>Le gain visible, c’est un tracking plus fluide sur les écrans 240 Hz et plus.</li>
+<li>Le prix : charge processeur, compatibilité des jeux et autonomie.</li>
+<li>2000–4000 Hz est un bon compromis pour la plupart ; 8000 Hz seulement si ton processeur et tes jeux suivent.</li>
+<li>Teste toujours la valeur réelle et tes FPS avant de garder un réglage.</li>
+</ul>
+<aside class="doc-cta glass" aria-labelledby="cta-h">
+  <h2 id="cta-h">Le faire en un clic avec KarmaaOptimizer</h2>
+  <p>KarmaaOptimizer intègre un test de polling rate natif jusqu’à 8000 Hz (hors navigateur, donc sans mesures plafonnées), un convertisseur de sensibilité entre jeux, et vérifie les réglages souris de Windows ci-dessus. Il mesure aussi la latence USB et des pilotes sur ton PC. Il ne modifie pas le firmware de ta souris : tu règles le polling rate dans le logiciel de ta souris, puis tu utilises l’app pour vérifier le résultat et comparer dans tes jeux. Aucun chiffre promis : tu mesures toi-même.</p>
+  <div class="cta"><a class="btn" href="https://buy.stripe.com/28EcN5eMxgVM5wy5SP53O06" target="_blank" rel="noopener noreferrer"><span>Acheter pour 50 €</span></a><a class="btn ghost" href="/fr/"><span>Voir l’app</span></a></div>
+</aside>
+<section class="doc-related" aria-labelledby="rel-h"><h2 id="rel-h">Guides liés</h2><ul><li><a href="/fr/guides/port-usb-souris-gaming/">Quel port USB pour ta souris gaming</a></li><li><a href="/fr/guides/reduire-input-lag-windows-11/">Réduire l’input lag sur Windows 11</a></li><li><a href="/fr/guides/meilleurs-reglages-windows-11-gaming/">Meilleurs réglages Windows 11 pour le gaming</a></li></ul></section>
+</article>
+</main>
+
+<footer id="footer">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="/fr/" class="logo"><img src="/assets/logo.png?v=3" alt="" width="30" height="30" loading="lazy">Karmaa<b>Optimizer</b></a>
+      <p>Un optimiseur Windows pour les joueurs. 250 réglages réversibles, rien d’injecté.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Navigation du pied de page"><a href="/fr/guides/">Guides</a><a href="/fr/#features">Fonctionnalités</a><a href="/fr/#offre">Prix</a><a href="/fr/#faq">FAQ</a></nav>
+    <nav class="foot-nav" aria-label="Informations légales"><a href="/fr/legal/mentions-legales/">Mentions légales</a><a href="/fr/legal/cgv/">CGV</a><a href="/fr/legal/confidentialite/">Confidentialité</a><a href="/fr/legal/remboursement/">Remboursement</a><a href="/fr/legal/contact/">Contact</a></nav>
+    <div class="foot-side">
+      <a href="https://discord.gg/6hES7Hn3u7" target="_blank" rel="noopener noreferrer">Discord</a>
+      <span>De l’aide sur Discord, 7 jours sur 7</span>
+      <a href="/guides/mouse-polling-rate-1000-4000-8000/" hreflang="en" lang="en">English version</a>
+    </div>
+  </div>
+  <div class="foot"><span>© 2026 KarmaaOptimizer</span><span><time datetime="2026-11-22">Mis à jour le 22 novembre 2026</time></span></div>
+</footer>
+<script defer src="/js/checkout.js?v=2"></script>
+<script defer src="/js/extras.js?v=3"></script>
+</body>
+</html>

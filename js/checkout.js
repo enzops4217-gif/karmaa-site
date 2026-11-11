@@ -28,7 +28,7 @@
     '<div class="co-bg" data-close></div>' +
     '<div class="co-card">' +
       '<button class="co-x" type="button" data-close aria-label="' + esc(T.close) + '">×</button>' +
-      '<div class="co-head"><img src="' + (en ? '' : '../') + 'assets/logo.png?v=3" alt="" width="56" height="56">' +
+      '<div class="co-head"><img src="/assets/logo.png?v=3" alt="" width="56" height="56">' +
         '<div><p class="co-t" id="co-t">' + esc(T.title) + '</p><p class="co-sub">' + esc(T.sub) + '</p></div>' +
         '<p class="co-price"><b>' + esc(T.price) + '</b><span>' + esc(T.once) + '</span></p></div>' +
       '<ul class="co-incl">' + T.incl.map(function (x) { return '<li>' + check + esc(x) + '</li>'; }).join('') + '</ul>' +
