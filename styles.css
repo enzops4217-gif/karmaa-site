@@ -2,7 +2,7 @@
 /* Base Apple (.claude/skills/apple-design/DESIGN.md) : tuiles pleine largeur, typo serrée, un seul accent.
    Version premium : fonds noirs et graphite, accent or champagne, bouton principal doré. */
 :root{--gold:#d4b483;--gold-hi:#ecd6ab;--gold-lo:#a8885a;--on-gold:#141109;
-  --tx:#f5f5f7;--mute:#9a9aa1;--mute2:#6e6e75;
+  --tx:#f5f5f7;--mute:#9a9aa1;--mute2:#87878d;
   --bg0:#000;--bg1:#0a0a0b;--bg2:#111113;--card:#17171a;--card2:#1e1e22;--line:rgba(255,255,255,.08);--line-gold:rgba(212,180,131,.28);
   --f:system-ui,-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;
   --ease:cubic-bezier(.16,1,.3,1);--pad:clamp(1.25rem,5vw,4rem);color-scheme:dark}
@@ -117,21 +117,25 @@ main>section+section::before{content:"";position:absolute;top:0;left:50%;transfo
 .steps h3{font-size:1.6rem}
 .steps p{color:var(--mute)}
 
-/* --- Fonctionnalités --- */
-.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1200px;margin-inline:auto}
-.feat{padding:2rem 1.8rem;display:flex;flex-direction:column;gap:.5rem;transition:scale .4s var(--ease),border-color .4s}
-.feat:hover{scale:1.015!important;border-color:var(--line-gold)}
-.feat svg{width:34px;height:34px;margin-bottom:.8rem;fill:none;stroke:var(--gold);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.feat h3{font-size:1.45rem}
-.feat p:last-child{color:var(--mute);font-size:1rem}
+/* --- Fonctionnalités : trois colonnes denses, pas de cartes --- */
+.feat-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:0 3.5rem;max-width:1200px;margin-inline:auto}
+.feat-col{padding-top:1.4rem;border-top:1px solid var(--c)}
+.feat-col-h{font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--c);margin-bottom:1.5rem}
+.feat-col ul{display:flex;flex-direction:column}
+.feat-col li{display:flex;gap:1rem;padding:1.1rem 0;border-top:1px solid var(--line)}
+.feat-col li:first-child{border-top:0;padding-top:0}
+.feat-col svg{flex:none;width:22px;height:22px;margin-top:.2rem;fill:none;stroke:var(--c);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.feat-col b{display:block;font-size:1.02rem;font-weight:600;margin-bottom:.25rem}
+.feat-col p{color:var(--mute);font-size:.92rem;line-height:1.4}
+@media (max-width:833px){.feat-cols{grid-template-columns:1fr;gap:2.2rem}}
 .feat:first-child{grid-column:span 2;background:linear-gradient(135deg,#221d14 0%,var(--card) 60%);border-color:var(--line-gold)}
 .feat:first-child h3{font-size:2.2rem}
 
 /* --- Profils --- */
 .prof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1100px;margin-inline:auto}
-@media (max-width:900px){.prof-grid{grid-template-columns:repeat(2,1fr)}}
-.prof{padding:2.4rem 2rem;display:flex;flex-direction:column;gap:.5rem;transition:scale .4s var(--ease),border-color .4s}
-.prof:hover{scale:1.015!important;border-color:var(--line-gold)}
+@media (max-width:900px){.prof-grid{grid-template-columns:repeat(2,1fr);row-gap:2rem}.prof:nth-child(2n+1){border-left:0;padding-left:0}}
+.prof{padding:0 2rem;display:flex;flex-direction:column;gap:.5rem;border-left:1px solid var(--line)}
+.prof:first-child{border-left:0;padding-left:0}
 .prof span{color:var(--mute2);font-size:.9rem}
 .prof h3{font-size:clamp(2rem,3vw,2.6rem)}
 .prof h3::after{content:"";display:inline-block;width:.3em;height:.3em;border-radius:50%;background:var(--c);margin-left:.35em;vertical-align:.18em}
@@ -156,7 +160,9 @@ main>section+section::before{content:"";position:absolute;top:0;left:50%;transfo
 
 /* --- Ce qu'elle ne fait pas --- */
 .pil-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1200px;margin-inline:auto}
-.pil{padding:2.4rem 1.6rem;text-align:center}
+@media (max-width:833px){.pil-grid{grid-template-columns:repeat(2,1fr);row-gap:2.4rem}.pil:nth-child(2n+1){border-left:0}}
+.pil{padding:0 1.6rem;text-align:center;border-left:1px solid var(--line)}
+.pil:first-child{border-left:0}
 .pil svg{width:40px;height:40px;margin:0 auto 1.1rem;display:block;fill:none;stroke:var(--gold);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .js .pil svg path,.js .pil svg circle{stroke-dasharray:200;stroke-dashoffset:200;transition:stroke-dashoffset 1.4s var(--ease)}
 .js .pil.on svg path,.js .pil.on svg circle{stroke-dashoffset:0}
