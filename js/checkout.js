@@ -6,12 +6,12 @@
   var T = en ? {
     title: 'KarmaaOptimizer', sub: 'Lifetime license · 1 PC', price: '€50', once: 'paid once',
     steps: ['Pay by card, Apple Pay or Google Pay', 'Get your license and the setup by email within minutes', 'Install the app and paste your license'],
-    incl: ['181 tweaks and 3 profiles', 'Automatic updates', 'KarmaaAI assistant', 'Help on Discord'],
+    incl: ['250 tweaks and 3 profiles', 'Automatic updates', 'KarmaaAI assistant', 'Help on Discord'],
     go: 'Continue to secure payment', opening: 'Opening secure payment…', secure: 'Secure payment by Stripe · We never see your card', close: 'Close'
   } : {
     title: 'KarmaaOptimizer', sub: 'Licence à vie · 1 PC', price: '50 €', once: 'payé une fois',
     steps: ['Paie par carte, Apple Pay ou Google Pay', 'Reçois ta licence et le setup par e-mail en quelques minutes', 'Installe l’app et colle ta licence'],
-    incl: ['181 réglages et 3 profils', 'Mises à jour automatiques', 'Assistant KarmaaAI', 'Aide sur Discord'],
+    incl: ['250 réglages et 3 profils', 'Mises à jour automatiques', 'Assistant KarmaaAI', 'Aide sur Discord'],
     go: 'Continuer vers le paiement sécurisé', opening: 'Ouverture du paiement sécurisé…', secure: 'Paiement sécurisé par Stripe · Ta carte n’est jamais visible pour nous', close: 'Fermer'
   };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
@@ -28,7 +28,7 @@
     '<div class="co-bg" data-close></div>' +
     '<div class="co-card">' +
       '<button class="co-x" type="button" data-close aria-label="' + esc(T.close) + '">×</button>' +
-      '<div class="co-head"><img src="' + (en ? '' : '../') + 'assets/logo.png?v=2" alt="" width="56" height="56">' +
+      '<div class="co-head"><img src="' + (en ? '' : '../') + 'assets/logo.png?v=3" alt="" width="56" height="56">' +
         '<div><p class="co-t" id="co-t">' + esc(T.title) + '</p><p class="co-sub">' + esc(T.sub) + '</p></div>' +
         '<p class="co-price"><b>' + esc(T.price) + '</b><span>' + esc(T.once) + '</span></p></div>' +
       '<ul class="co-incl">' + T.incl.map(function (x) { return '<li>' + check + esc(x) + '</li>'; }).join('') + '</ul>' +

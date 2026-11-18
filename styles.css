@@ -1,9 +1,9 @@
 /* ===== KarmaaOptimizer — noir & champagne ===== */
 /* Base Apple (.claude/skills/apple-design/DESIGN.md) : tuiles pleine largeur, typo serrée, un seul accent.
    Version premium : fonds noirs et graphite, accent or champagne, bouton principal doré. */
-:root{--gold:#d4b483;--gold-hi:#ecd6ab;--gold-lo:#a8885a;--on-gold:#141109;
+:root{--gold:#0a84ff;--gold-hi:#409cff;--gold-lo:#0060df;--on-gold:#ffffff;
   --tx:#f5f5f7;--mute:#9a9aa1;--mute2:#87878d;
-  --bg0:#000;--bg1:#0a0a0b;--bg2:#111113;--card:#17171a;--card2:#1e1e22;--line:rgba(255,255,255,.08);--line-gold:rgba(212,180,131,.28);
+  --bg0:#000;--bg1:#0a0a0b;--bg2:#111113;--card:#17171a;--card2:#1e1e22;--line:rgba(255,255,255,.08);--line-gold:rgba(10,132,255,.28);
   --f:system-ui,-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;
   --ease:cubic-bezier(.16,1,.3,1);--pad:clamp(1.25rem,5vw,4rem);color-scheme:dark}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -73,12 +73,12 @@ main>section+section::before{content:"";position:absolute;top:0;left:50%;transfo
 .hero-shot{position:absolute;left:calc(var(--hx) + 37rem);right:max(var(--hx),3vw);top:50%;max-width:1150px;margin:0;transform:translateY(-46%);pointer-events:none;isolation:isolate}
 .hero-shot img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line-gold);box-shadow:0 30px 80px rgba(0,0,0,.6)}
 /* Lueur dorée et anneau au sol (comme sous l'ancien PC), statiques */
-.hero-shot::before{content:"";position:absolute;inset:-22% -12%;z-index:-1;background:radial-gradient(closest-side,rgba(212,180,131,.15),rgba(212,180,131,0));pointer-events:none}
-.hero-shot::after{content:"";position:absolute;left:6%;right:6%;bottom:-12%;height:20%;z-index:-1;border:1px solid rgba(212,180,131,.4);border-radius:50%;background:radial-gradient(closest-side,rgba(212,180,131,.14),rgba(212,180,131,0))}
+.hero-shot::before{content:"";position:absolute;inset:-22% -12%;z-index:-1;background:radial-gradient(closest-side,rgba(10,132,255,.15),rgba(10,132,255,0));pointer-events:none}
+.hero-shot::after{content:"";position:absolute;left:6%;right:6%;bottom:-12%;height:20%;z-index:-1;border:1px solid rgba(10,132,255,.4);border-radius:50%;background:radial-gradient(closest-side,rgba(10,132,255,.14),rgba(10,132,255,0))}
 /* Cartes tirées de vraies captures de l'app, posées sur la fenêtre */
 .hero-shot .hero-card{position:absolute;background:var(--card);box-shadow:0 24px 60px rgba(0,0,0,.7)}
 .hero-shot .c-score{width:50%;left:-8%;bottom:-11%}
-.hero-shot .c-profile{width:30%;right:5%;top:-14%}
+.hero-shot .c-profile{width:23%;right:4%;top:-20%}
 /* Apparition unique au chargement, puis immobile */
 .hero-shot img{animation:heroin .9s var(--ease) both}
 .hero-shot .c-score{animation-delay:.25s}
@@ -102,7 +102,7 @@ main>section+section::before{content:"";position:absolute;top:0;left:50%;transfo
 .chip{padding:.45rem .95rem;border-radius:980px;border:1px solid var(--line);font-size:.82rem;color:var(--tx);background:rgba(255,255,255,.04);transition:border-color .2s,background .2s,transform .15s}
 .chip::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);margin-right:.45rem;vertical-align:1px}
 .chip:hover{background:rgba(255,255,255,.09)}
-.chip[aria-pressed="true"]{border-color:var(--gold);background:rgba(212,180,131,.1)}
+.chip[aria-pressed="true"]{border-color:var(--gold);background:rgba(10,132,255,.1)}
 .chip:active{transform:scale(.95)}
 .no3d .chips{display:none}
 .hero-hint{position:absolute;left:50%;bottom:1.6rem;transform:translateX(-50%);display:flex;align-items:center;gap:.6rem;color:var(--mute2);font-size:.75rem}
@@ -132,8 +132,8 @@ main>section+section::before{content:"";position:absolute;top:0;left:50%;transfo
 .feat:first-child h3{font-size:2.2rem}
 
 /* --- Profils --- */
-.prof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1100px;margin-inline:auto}
-@media (max-width:900px){.prof-grid{grid-template-columns:repeat(2,1fr);row-gap:2rem}.prof:nth-child(2n+1){border-left:0;padding-left:0}}
+.prof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1100px;margin-inline:auto}
+@media (max-width:900px){.prof-grid{grid-template-columns:1fr;row-gap:2rem}.prof{border-left:0;padding-left:0}}
 .prof{padding:0 2rem;display:flex;flex-direction:column;gap:.5rem;border-left:1px solid var(--line)}
 .prof:first-child{border-left:0;padding-left:0}
 .prof span{color:var(--mute2);font-size:.9rem}
@@ -152,7 +152,7 @@ main>section+section::before{content:"";position:absolute;top:0;left:50%;transfo
 .ringwrap svg{width:100%;height:100%;transform:rotate(-90deg);overflow:visible}
 .ringwrap circle{fill:none;stroke-width:8;stroke-linecap:round}
 .ringwrap .bg{stroke:#1c1c1f}
-#ring{stroke:var(--gold);stroke-dasharray:553;stroke-dashoffset:553;filter:drop-shadow(0 0 14px rgba(212,180,131,.35))}
+#ring{stroke:var(--gold);stroke-dasharray:553;stroke-dashoffset:553;filter:drop-shadow(0 0 14px rgba(10,132,255,.35))}
 #grade{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:clamp(3rem,8vw,5rem);font-weight:600;letter-spacing:-.03em;color:var(--gold-hi)}
 .scan-copy{max-width:26rem}
 .scan-copy .big{text-align:left;margin-bottom:1rem}
@@ -241,7 +241,7 @@ main>section+section::before{content:"";position:absolute;top:0;left:50%;transfo
 .gal-tabs::-webkit-scrollbar{display:none}
 .gal-tab{flex-shrink:0;padding:.55rem 1.1rem;border-radius:980px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--mute);font:inherit;font-size:.9rem;cursor:pointer;transition:border-color .2s,background .2s,color .2s,transform .15s}
 .gal-tab:hover{color:var(--tx);background:rgba(255,255,255,.08)}
-.gal-tab[aria-selected="true"]{color:var(--tx);border-color:var(--gold);background:rgba(212,180,131,.1)}
+.gal-tab[aria-selected="true"]{color:var(--tx);border-color:var(--gold);background:rgba(10,132,255,.1)}
 .gal-tab:active{transform:scale(.95)}
 .gal-tab:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .gal-frame{border-radius:16px;border:1px solid var(--line);overflow:hidden;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.5)}
@@ -269,7 +269,7 @@ main>section+section::before{content:"";position:absolute;top:0;left:50%;transfo
 .co-x{position:absolute;top:10px;right:12px;width:36px;height:36px;border-radius:50%;font-size:1.5rem;line-height:1;color:var(--mute);transition:background .2s,color .2s}
 .co-x:hover{background:var(--line);color:var(--tx)}
 .co-head{display:flex;align-items:center;gap:14px;padding-right:28px}
-.co-head img{width:56px;height:56px;border-radius:14px;box-shadow:0 0 30px rgba(212,180,131,.25)}
+.co-head img{width:56px;height:56px;border-radius:14px;box-shadow:0 0 30px rgba(10,132,255,.25)}
 .co-t{font-weight:600;font-size:1.1rem}
 .co-sub{color:var(--mute);font-size:.88rem}
 .co-price{margin-left:auto;text-align:right;line-height:1.1}
@@ -280,7 +280,7 @@ main>section+section::before{content:"";position:absolute;top:0;left:50%;transfo
 .co-incl svg,.co-secure svg{width:16px;height:16px;flex:none;fill:none;stroke:var(--gold);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .co-steps{display:grid;gap:10px;padding:14px;border-radius:16px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:.9rem;color:var(--mute)}
 .co-steps li{display:flex;align-items:center;gap:12px}
-.co-steps span{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:rgba(212,180,131,.12);border:1px solid var(--line-gold);color:var(--gold-hi);font-size:.8rem;font-weight:600}
+.co-steps span{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:rgba(10,132,255,.12);border:1px solid var(--line-gold);color:var(--gold-hi);font-size:.8rem;font-weight:600}
 .btn.co-go{width:100%;margin-top:18px;min-height:52px;font-size:1.02rem;position:relative;overflow:hidden}
 .btn.co-go::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);transform:translateX(-100%);animation:co-shine 2.8s var(--ease) 1s infinite}
 .btn.co-go.busy{pointer-events:none;filter:saturate(.8)}
