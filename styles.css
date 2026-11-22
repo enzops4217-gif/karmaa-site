@@ -382,7 +382,7 @@ main>section+section::before{content:"";position:absolute;top:0;left:50%;transfo
   .foot-side a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em}
 }
 /* 20. Contact flottant (pilule bleue avec libellé, réduite à l'icône sur téléphone) */
-.x-contact{width:auto;gap:.5rem;padding:0 1.1rem 0 .95rem;border-radius:999px;border-color:transparent;background:linear-gradient(180deg,var(--gold-hi),var(--gold-lo));color:var(--on-gold);font-size:.88rem;font-weight:600;text-decoration:none;opacity:0;transform:translateY(12px);pointer-events:none}
+.x-contact{display:inline-flex;align-items:center;width:auto;gap:.5rem;padding:0 1.1rem 0 .95rem;border-radius:999px;border-color:transparent;background:linear-gradient(180deg,var(--gold-hi),var(--gold-lo));color:var(--on-gold);font-size:.88rem;font-weight:600;text-decoration:none;opacity:0;transform:translateY(12px);pointer-events:none}
 .x-contact.on{opacity:1;transform:none;pointer-events:auto}
 .x-contact:hover{background:linear-gradient(180deg,#5aaaff,var(--gold));border-color:transparent}
 @media (max-width:640px){.x-contact{width:46px;padding:0}.x-contact span{display:none}}
