@@ -340,3 +340,23 @@ main>section+section::before{content:"";position:absolute;top:0;left:50%;transfo
 .x-loading::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.06) 50%,transparent 70%);transform:translateX(-100%);animation:x-shine 1.4s ease-in-out infinite}
 @keyframes x-shine{to{transform:translateX(100%)}}
 @media (prefers-reduced-motion:reduce){.x-loading::after{animation:none}}
+/* 7. Effets au survol (souris seulement ; aucun mouvement si l'utilisateur les réduit) */
+@media (hover:hover){
+  .btn{transition:filter .2s,box-shadow .25s var(--ease),transform .2s}
+  .btn:not(.ghost):hover{box-shadow:0 8px 28px rgba(10,132,255,.35)}
+  .feat-col li svg{transition:transform .3s var(--ease)}
+  .feat-col li:hover svg{transform:scale(1.12)}
+  .feat-col li:hover b{color:var(--c)}
+  .feat-col li b{transition:color .2s}
+  .steps li .step-n{transition:background .25s,color .25s}
+  .steps li:hover .step-n{background:var(--gold);color:var(--on-gold)}
+  .gal-frame{transition:border-color .25s}
+  .gal-frame:hover{border-color:rgba(255,255,255,.16)}
+  .faqlist summary h3{transition:color .2s}
+  .faqlist summary:hover h3{color:var(--gold-hi)}
+  .top .logo{transition:opacity .2s}
+  .top .logo:hover{opacity:.85}
+  main p a:not(.btn){text-decoration:underline;text-decoration-color:transparent;text-underline-offset:3px;transition:text-decoration-color .2s}
+  main p a:not(.btn):hover{text-decoration-color:currentColor}
+}
+@media (prefers-reduced-motion:reduce){.feat-col li:hover svg{transform:none}}
