@@ -321,3 +321,16 @@ main>section+section::before{content:"";position:absolute;top:0;left:50%;transfo
 .x-totop{opacity:0;transform:translateY(12px);pointer-events:none}
 .x-totop.on{opacity:1;transform:none;pointer-events:auto}
 @media (prefers-reduced-motion:reduce){.x-fab{transition:none}}
+/* 5. Menu mobile */
+.x-burger{display:none}
+.x-burger path{transition:transform .3s var(--ease);transform-origin:12px 12px}
+.menu-open .x-burger .l1{transform:translateY(4px) rotate(45deg)}
+.menu-open .x-burger .l2{transform:translateY(-4px) rotate(-45deg)}
+@media (max-width:833px){
+  .x-burger{display:inline-grid;margin-right:-6px}
+  .top.menu-open nav{display:flex;position:fixed;top:calc(52px + env(safe-area-inset-top,0px));left:0;right:0;flex-direction:column;gap:0;margin:0;padding:.4rem 16px 1rem;background:rgba(10,10,11,.96);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);animation:x-drop .3s var(--ease)}
+  .top.menu-open nav a{padding:.9rem 0;font-size:1.05rem;color:var(--tx);border-bottom:1px solid var(--line)}
+  .top.menu-open nav a:last-child{border-bottom:0}
+}
+@keyframes x-drop{from{opacity:0;transform:translateY(-8px)}}
+@media (prefers-reduced-motion:reduce){.x-burger path{transition:none}.top.menu-open nav{animation:none}}
