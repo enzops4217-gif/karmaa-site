@@ -94,4 +94,22 @@
       if ((e.key === 'k' && (e.ctrlKey || e.metaKey)) || (e.key === '/' && !typing)) { e.preventDefault(); open(); }
     });
   })();
+
+  /* --- Boutons flottants en bas à droite (retour en haut, contact) --- */
+  var dock = document.createElement('div'); dock.className = 'x-dock'; document.body.appendChild(dock);
+
+  /* --- 4. Retour en haut : visible après un écran de défilement --- */
+  (function () {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'x-fab x-totop';
+    b.setAttribute('aria-label', en ? 'Back to top' : 'Revenir en haut'); b.title = b.getAttribute('aria-label');
+    b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+    dock.appendChild(b);
+    var on = false;
+    function check() { var v = scrollY > innerHeight; if (v !== on) { on = v; b.classList.toggle('on', v); b.tabIndex = v ? 0 : -1; b.setAttribute('aria-hidden', v ? 'false' : 'true'); } }
+    check(); addEventListener('scroll', check, { passive: true });
+    b.addEventListener('click', function () {
+      goTo(document.body);
+      var s = $('.skip'); if (s) s.focus({ preventScroll: true }); // le focus repart du haut de la page
+    });
+  })();
 })();
