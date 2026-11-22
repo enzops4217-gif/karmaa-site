@@ -13,7 +13,7 @@ const STRIPE = 'https://buy.stripe.com/28EcN5eMxgVM5wy5SP53O06';
 const DISCORD = 'https://discord.gg/6hES7Hn3u7';
 const TODAY = '2026-11-22';
 const DATE = { en: 'November 22, 2026', fr: '22 novembre 2026' };
-const CSSV = 24;
+const CSSV = 25;
 
 const GUIDES = [
   require('./guides/input-lag'),
@@ -36,6 +36,7 @@ const T = {
     crumbHome: 'Home', crumbGuides: 'Guides', updated: 'Updated', read: 'min read', related: 'Related guides',
     legal: [['Legal notice', 'legal-notice'], ['Terms of sale', 'terms'], ['Privacy policy', 'privacy'], ['Refund policy', 'refund'], ['Contact', 'contact']],
     ctaTitle: 'Do it in one click with KarmaaOptimizer',
+    toc: 'On this page', guide: 'Free guide', legalTag: 'Legal', readGuide: 'Read the guide', guidesCount: 'guides',
   },
   fr: {
     locale: 'fr_FR', altLocale: 'en_US', home: '/fr/', guides: '/fr/guides/', og: '/assets/og-fr.jpg?v=50',
@@ -47,6 +48,7 @@ const T = {
     crumbHome: 'Accueil', crumbGuides: 'Guides', updated: 'Mis à jour le', read: 'min de lecture', related: 'Guides liés',
     legal: [['Mentions légales', 'mentions-legales'], ['CGV', 'cgv'], ['Confidentialité', 'confidentialite'], ['Remboursement', 'remboursement'], ['Contact', 'contact']],
     ctaTitle: 'Le faire en un clic avec KarmaaOptimizer',
+    toc: 'Sur cette page', guide: 'Guide gratuit', legalTag: 'Informations légales', readGuide: 'Lire le guide', guidesCount: 'guides',
   },
 };
 
@@ -54,11 +56,11 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 const other = (l) => (l === 'en' ? 'fr' : 'en');
 const legalPath = (l, slug) => (l === 'en' ? `/legal/${slug}/` : `/fr/legal/${slug}/`);
 
-function header(l, altHref) {
+function header(l, altHref, section) {
   const t = T[l];
   return `<header class="top">
   <a href="${t.home}" class="logo" aria-label="KarmaaOptimizer"><img src="/assets/logo.png?v=3" alt="" width="30" height="30">Karmaa<b>Optimizer</b></a>
-  <nav aria-label="${t.mainNav}">${t.nav.map(([n, h]) => `<a href="${h}">${n}</a>`).join('')}</nav>
+  <nav aria-label="${t.mainNav}">${t.nav.map(([n, h]) => `<a href="${h}"${section && h === t.guides ? ' class="is-on"' : ''}>${n}</a>`).join('')}</nav>
   <a class="lang" href="${altHref}" hreflang="${other(l)}" lang="${other(l)}" title="${t.otherTitle}">${t.otherShort}</a>
   <a class="btn hide-sm" href="${STRIPE}" target="_blank" rel="noopener noreferrer"><span>${t.buyTop}</span></a>
 </header>`;
@@ -115,11 +117,14 @@ function layout(p) {
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(p.title)}"><meta name="twitter:description" content="${esc(p.desc)}"><meta name="twitter:image" content="${SITE}${t.og}">
 <link rel="apple-touch-icon" href="/assets/logo.png?v=3">
 <link rel="icon" href="/assets/logo.png?v=3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css?v=${CSSV}">
 ${ld}</head>
 <body>
 <a class="skip" href="#main">${t.skip}</a>
-${header(p.lang, p.altPath)}
+${header(p.lang, p.altPath, p.section)}
 
 <main id="main" class="doc-main">
 ${p.body}
@@ -128,6 +133,7 @@ ${p.body}
 ${footer(p.lang, p.altPath)}
 <script defer src="/js/checkout.js?v=2"></script>
 <script defer src="/js/extras.js?v=3"></script>
+<script defer src="/js/motion.js?v=1"></script>
 </body>
 </html>
 `;
@@ -165,6 +171,9 @@ function write(rel, html) {
 const byId = Object.fromEntries(GUIDES.map((g) => [g.id, g]));
 const gPath = (l, g) => `${T[l].guides}${g.slug[l]}/`;
 const stats = [];
+const readMins = {};
+// Sommaire : les titres <h2 id="…"> du corps du guide, texte sans balises
+const tocItems = (html) => [...html.matchAll(/<h2 id="([^"]+)">([\s\S]*?)<\/h2>/g)].map((m) => [m[1], m[2].replace(/<[^>]+>/g, '').trim()]);
 
 for (const g of GUIDES) {
   for (const l of ['en', 'fr']) {
@@ -175,15 +184,24 @@ for (const g of GUIDES) {
     const n = words(c.lede + " " + c.body + " " + c.cta);
     const mins = Math.max(4, Math.round(n / 220));
     const related = g.related.map((s) => `<li><a href="${gPath(l, byId[s])}">${byId[s][l].short}</a></li>`).join('');
-    const body = `<article class="doc">
+    const toc = tocItems(c.body);
+    const tocList = toc.map(([id, txt]) => `<li><a href="#${id}">${txt}</a></li>`).join('');
+    const body = `<div class="doc-layout">
+<article class="doc">
+<header class="doc-head">
 ${cr.html}
 <h1>${c.h1}</h1>
-<p class="doc-meta">${t.updated} <time datetime="${TODAY}">${DATE[l]}</time> · ${mins} ${t.read}</p>
+<p class="doc-meta"><span class="badge ac">${t.guide}</span><span class="badge">${t.updated} <time datetime="${TODAY}">${DATE[l]}</time></span><span class="badge">${mins} ${t.read}</span></p>
 <p class="doc-lede">${c.lede}</p>
+</header>
+<details class="toc-m"><summary>${t.toc}</summary><ol>${tocList}</ol></details>
 ${c.body}
 ${cta(l, c.cta)}
 <section class="doc-related" aria-labelledby="rel-h"><h2 id="rel-h">${t.related}</h2><ul>${related}</ul></section>
-</article>`;
+</article>
+<nav class="toc" aria-label="${t.toc}"><p class="toc-t">${t.toc}</p><ol>${tocList}</ol></nav>
+</div>`;
+    readMins[g.id + l] = mins;
     const article = {
       '@type': 'Article', '@id': SITE + p + '#article', headline: c.h1, description: c.desc, inLanguage: l,
       datePublished: TODAY, dateModified: TODAY, mainEntityOfPage: SITE + p, image: SITE + t.og,
@@ -191,7 +209,7 @@ ${cta(l, c.cta)}
     };
     const ld = [{ '@type': 'Organization', '@id': SITE + '/#org', name: 'KarmaaOptimizer', url: SITE + '/', logo: { '@type': 'ImageObject', url: SITE + '/assets/logo.png?v=3', width: 512, height: 512 } }, article, cr.ld];
     if (c.howto) ld.push({ '@type': 'HowTo', name: c.howto.name, inLanguage: l, totalTime: c.howto.time, step: c.howto.steps.map(([name, text, id], i) => ({ '@type': 'HowToStep', position: i + 1, name, text, url: `${SITE}${p}#${id}` })) });
-    write(p.slice(1, -1), layout({ lang: l, path: p, altPath: gPath(other(l), g), title: c.title, desc: c.desc, ogType: 'article', jsonld: ld, body }));
+    write(p.slice(1, -1), layout({ lang: l, path: p, altPath: gPath(other(l), g), title: c.title, desc: c.desc, ogType: 'article', jsonld: ld, body, section: 'guides' }));
     stats.push([p, n, c.title.length, c.desc.length]);
   }
 }
@@ -205,15 +223,18 @@ for (const l of ['en', 'fr']) {
   const t = T[l];
   const i = IDX[l];
   const cr = crumbs(l, [[t.crumbHome, t.home], [t.crumbGuides, null]]);
-  const cards = GUIDES.map((g) => `<li><a class="glass guide-card" href="${gPath(l, g)}"><h2>${g[l].short}</h2><p>${g[l].desc}</p></a></li>`).join('');
+  const cards = GUIDES.map((g, n) => `<li><a class="glass guide-card" href="${gPath(l, g)}"><span class="gc-i" aria-hidden="true">${String(n + 1).padStart(2, '0')}</span><h2>${g[l].short}</h2><p>${g[l].desc}</p><span class="gc-f"><span>${readMins[g.id + l]} ${t.read}</span><b>${t.readGuide} <span aria-hidden="true">→</span></b></span></a></li>`).join('');
   const body = `<div class="doc doc-wide">
+<header class="doc-head">
 ${cr.html}
 <h1>${i.h1}</h1>
+<p class="doc-meta"><span class="badge ac">${GUIDES.length} ${t.guidesCount}</span><span class="badge">Windows 10 · 11</span></p>
 <p class="doc-lede">${i.lede}</p>
+</header>
 <ul class="guide-grid">${cards}</ul>
 </div>`;
   const ld = [{ '@type': 'CollectionPage', '@id': SITE + t.guides, url: SITE + t.guides, name: i.h1, description: i.desc, inLanguage: l, hasPart: GUIDES.map((g) => ({ '@type': 'Article', headline: g[l].h1, url: SITE + gPath(l, g) })) }, cr.ld];
-  write(t.guides.slice(1, -1), layout({ lang: l, path: t.guides, altPath: T[other(l)].guides, title: i.title, desc: i.desc, jsonld: ld, body }));
+  write(t.guides.slice(1, -1), layout({ lang: l, path: t.guides, altPath: T[other(l)].guides, title: i.title, desc: i.desc, jsonld: ld, body, section: 'guides' }));
   stats.push([t.guides, 0, i.title.length, i.desc.length]);
 }
 
@@ -225,9 +246,11 @@ for (const page of LEGAL) {
     const p = legalPath(l, page.slug[l]);
     const cr = crumbs(l, [[t.crumbHome, t.home], [c.h1, null]]);
     const body = `<article class="doc">
+<header class="doc-head">
 ${cr.html}
 <h1>${c.h1}</h1>
-<p class="doc-meta">${t.updated} <time datetime="${TODAY}">${DATE[l]}</time></p>
+<p class="doc-meta"><span class="badge">${t.legalTag}</span><span class="badge">${t.updated} <time datetime="${TODAY}">${DATE[l]}</time></span></p>
+</header>
 ${c.body}
 </article>`;
     write(p.slice(1, -1), layout({ lang: l, path: p, altPath: legalPath(other(l), page.slug[other(l)]), title: c.title, desc: c.desc, jsonld: [cr.ld], body }));
