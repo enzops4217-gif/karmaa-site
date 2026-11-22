@@ -164,4 +164,22 @@
     addEventListener('beforeprint', function () { closed = $$('details:not([open])'); closed.forEach(function (d) { d.open = true; }); });
     addEventListener('afterprint', function () { closed.forEach(function (d) { d.open = false; }); closed = []; });
   })();
+
+  /* --- 14. Suivi UTM : les paramètres utm_* de l'arrivée sont gardés pendant la visite (sessionStorage)
+     et ajoutés aux liens de paiement Stripe, qui les affichent dans le tableau de bord Stripe. --- */
+  (function () {
+    var KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+    var clean = function (v) { return String(v || '').replace(/[^\w.\-~+ %]/g, '').slice(0, 100); };
+    var utm = {};
+    try { utm = JSON.parse(sessionStorage.getItem('ko-utm') || '{}') || {}; } catch (_) { utm = {}; }
+    var q = new URLSearchParams(location.search); var fresh = {};
+    KEYS.forEach(function (k) { var v = clean(q.get(k)); if (v) fresh[k] = v; });
+    if (Object.keys(fresh).length) { utm = fresh; try { sessionStorage.setItem('ko-utm', JSON.stringify(utm)); } catch (_) { /* navigation privée */ } }
+    if (!Object.keys(utm).length) return;
+    $$('a[href^="https://buy.stripe.com/"]').forEach(function (a) {
+      var u = new URL(a.href);
+      KEYS.forEach(function (k) { if (utm[k]) u.searchParams.set(k, utm[k]); });
+      a.href = u.toString();
+    });
+  })();
 })();
