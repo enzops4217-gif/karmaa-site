@@ -334,3 +334,9 @@ main>section+section::before{content:"";position:absolute;top:0;left:50%;transfo
 }
 @keyframes x-drop{from{opacity:0;transform:translateY(-8px)}}
 @media (prefers-reduced-motion:reduce){.x-burger path{transition:none}.top.menu-open nav{animation:none}}
+/* 6. Captures en cours de chargement */
+.x-loading{position:relative;background:#141417;overflow:hidden}
+.x-loading img{opacity:0}
+.x-loading::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.06) 50%,transparent 70%);transform:translateX(-100%);animation:x-shine 1.4s ease-in-out infinite}
+@keyframes x-shine{to{transform:translateX(100%)}}
+@media (prefers-reduced-motion:reduce){.x-loading::after{animation:none}}

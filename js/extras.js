@@ -133,4 +133,13 @@
     document.addEventListener('click', function (e) { if (isOpen() && !top.contains(e.target)) set(false); });
     matchMedia('(min-width: 834px)').addEventListener('change', function (m) { if (m.matches) set(false); });
   })();
+
+  /* --- 6. Chargement des captures : reflet animé (skeleton) tant que l'image n'est pas arrivée --- */
+  $$('.gal-frame img, .scan-shot img').forEach(function (img) {
+    var box = img.parentElement;
+    if (img.complete && img.naturalWidth) return;
+    box.classList.add('x-loading'); box.setAttribute('aria-busy', 'true');
+    var done = function () { box.classList.remove('x-loading'); box.removeAttribute('aria-busy'); };
+    img.addEventListener('load', done, { once: true }); img.addEventListener('error', done, { once: true });
+  });
 })();
