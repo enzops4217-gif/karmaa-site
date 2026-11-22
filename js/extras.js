@@ -157,4 +157,11 @@
     addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(draw); } }, { passive: true });
     addEventListener('resize', draw); draw();
   })();
+
+  /* --- 10. Impression : toutes les réponses de la FAQ dépliées, puis remises comme avant --- */
+  (function () {
+    var closed = [];
+    addEventListener('beforeprint', function () { closed = $$('details:not([open])'); closed.forEach(function (d) { d.open = true; }); });
+    addEventListener('afterprint', function () { closed.forEach(function (d) { d.open = false; }); closed = []; });
+  })();
 })();
