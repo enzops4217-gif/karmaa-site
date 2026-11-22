@@ -524,6 +524,8 @@ main>section+section::before{content:"";position:absolute;top:0;left:50%;transfo
   .guide-grid{grid-template-columns:1fr}
   .doc{font-size:16px}
   .x-contact{width:46px;padding:0}.x-contact span{display:none}
+  .note{border-radius:12px;align-items:flex-start;line-height:1.4}
+  .note::before{margin-top:.45em}
   .price{padding:1.8rem 1.4rem}
   .banner{width:calc(100% + 2.8rem);margin:-1.8rem -1.4rem .4rem}
   .feat-col{padding:1.2rem 1.1rem .5rem}
