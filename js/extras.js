@@ -182,4 +182,19 @@
       a.href = u.toString();
     });
   })();
+
+  /* --- 20. Bouton de contact flottant : aide sur Discord (apparaît une fois le haut de page passé) --- */
+  (function () {
+    var src = $('.foot-side a[href*="discord.gg"]'); if (!src) return;
+    var a = document.createElement('a'); a.className = 'x-fab x-contact'; a.href = src.href;
+    a.target = '_blank'; a.rel = 'noopener noreferrer';
+    var label = en ? 'Help on Discord' : 'De l’aide sur Discord';
+    a.setAttribute('aria-label', label + (en ? ' (opens in a new tab)' : ' (s’ouvre dans un nouvel onglet)'));
+    a.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg><span></span>';
+    a.querySelector('span').textContent = label;
+    dock.appendChild(a);
+    var on = null;
+    function check() { var v = scrollY > innerHeight * 0.5; if (v !== on) { on = v; a.classList.toggle('on', v); } }
+    check(); addEventListener('scroll', check, { passive: true });
+  })();
 })();
