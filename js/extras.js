@@ -142,4 +142,19 @@
     var done = function () { box.classList.remove('x-loading'); box.removeAttribute('aria-busy'); };
     img.addEventListener('load', done, { once: true }); img.addEventListener('error', done, { once: true });
   });
+
+  /* --- 8. Barre de progression de lecture, sous la barre du haut --- */
+  (function () {
+    var top = $('.top'); if (!top) return;
+    var bar = document.createElement('div'); bar.className = 'x-progress'; bar.setAttribute('aria-hidden', 'true');
+    top.appendChild(bar);
+    var ticking = false;
+    function draw() {
+      ticking = false;
+      var max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0) + ')';
+    }
+    addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(draw); } }, { passive: true });
+    addEventListener('resize', draw); draw();
+  })();
 })();

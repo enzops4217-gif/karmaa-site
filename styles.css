@@ -360,3 +360,5 @@ main>section+section::before{content:"";position:absolute;top:0;left:50%;transfo
   main p a:not(.btn):hover{text-decoration-color:currentColor}
 }
 @media (prefers-reduced-motion:reduce){.feat-col li:hover svg{transform:none}}
+/* 8. Progression de lecture */
+.x-progress{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:linear-gradient(90deg,var(--gold-lo),var(--gold-hi));transform:scaleX(0);transform-origin:0 50%;pointer-events:none}
